@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Resultados" language="groovy" pageWidth="595" pageHeight="1498" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5446221d-8d73-493c-aa54-e28a51fc8cde">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="encuesta" class="java.lang.Integer">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tbl_resultado_evaluacion where id_resultado =$P{encuesta}]]>
+	</queryString>
+	<field name="id_resultado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="primer_resultado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="segundo_resultado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tercer_resultado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuarto_resultado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="167" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="555" height="58" uuid="e79357e3-3fa6-4cfb-9364-45f1b169fefc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[INFORME DE RESULTADOS
+
+EVALUACIÓN DE LA UNIDAD ADMINISTRATIVA
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="86" width="555" height="81" uuid="97b84037-b509-4b31-8f17-46dc89cee4a9"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[EVALUACIÓN DE LA UNIDAD ADMINISTRATIVA: GERENCIA DE MERCADEO
+
+JEFE DE LA UNDAD ADMINISTRATIVA: GERENTE FULANO DE TAL
+
+FECHA DE LA EVALUACIÓN: 16 DE FEBRERO DE 2017 ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1291" splitType="Stretch">
+			<rectangle>
+				<reportElement x="38" y="1085" width="473" height="160" uuid="905defeb-b66f-4e87-9f10-2505034ff4c7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="39" y="410" width="473" height="660" uuid="751034d6-1a9f-4acb-9eb9-779ecff4f5f0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="41" y="192" width="469" height="75" uuid="281ee98e-ce82-4ee3-99d5-c45b4f74b4de"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="100" uuid="c5633d33-6aad-49f7-878f-60dde61f5732"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[PRIMER RESULTADO:
+
+Los puntajes consolidados de la consulta realizada a las personas que respondieron a los reactivos o afirmaciones de este formulario, dieron por resultado para la GERENCIA DE MERCADEO una evaluación calificada como: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="41" y="143" width="470" height="1" uuid="5286120c-8f5c-40e0-ac37-ca4d58cdec59"/>
+			</line>
+			<staticText>
+				<reportElement x="41" y="157" width="470" height="20" uuid="6f7f0d29-1607-4e5d-9b95-f62fd51ad4f7"/>
+				<text><![CDATA[Opción X: (SEGUNDO RESULTADO) ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="192" width="469" height="75" uuid="53dca57e-a7eb-4a4c-be0c-97e443a482fc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[La calificación de DESEMPEÑO NO SATISFACTORIO EN EL NIVEL REGULAR O POR DEBAJO DE LAS EXPECTATIVAS revela que su Unidad Administrativa, no cumple con el funcionamiento mínimo esperado, n i con las condiciones básicas que hagan posible un desempeño satisfactorio por parte de sus subalternos.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="41" y="297" width="470" height="1" uuid="2a51f6f8-c808-4b4a-9d4c-f0356e69f8fb"/>
+			</line>
+			<staticText>
+				<reportElement x="42" y="308" width="468" height="20" uuid="db28c7c8-f85d-421c-b43f-35cad35aaf8d"/>
+				<text><![CDATA[Opción X: (TERCER RESULTADO) ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="340" width="470" height="60" uuid="f0fedd6a-c1a7-4037-93d1-0fbd9780a2f5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(Se escribe y resaltan en amarillo, para cada criterio, las respuestas con valoración NO SATISFACTORIA: entre DEFICIENTE Y REGULAR. Las que obtienen en promedio puntuaciones por arriba del rango correspondiente al REGULAR O POR DEBAJO DEL PROMEDIO, no se incluyen)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="110" width="469" height="20" uuid="1ef5f174-07b1-4227-b91a-55dce838c9a9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_resultado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="413" width="469" height="654" uuid="33b32925-3050-472e-95a5-25b1a0bae02c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tercer_resultado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="1086" width="468" height="158" uuid="65e7b8b2-8d93-4e68-a71f-259684773d5e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuarto_resultado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
