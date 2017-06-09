@@ -144,57 +144,7 @@ class encuesta{
 		}
 
 
-		public function promedioXpreguntas(){
-			
-			$resp =array();
-			$query = "SELECT pregunta,sum(valores_estudio)/sum(cantidad) as promedio FROM tbl_estudio as estudio, tbl_preguntas as preguntas where preguntas.id_pregunta= estudio.fk_pregunta group by fk_pregunta";
 
-			/*if (mysqli_query($this->connect, $query)) {
-    			echo "select successfully";
-			} else {
-   				echo "Error: " . $query . "<br>" . mysqli_error($this->connect);
-			}*/
-
-			$result = mysqli_query($this->connect, $query);
-
-				if ($result) {
-				    // output data of each row
-				    while($row = $result->fetch_assoc()) {
-				        $resp[] = array("pregunta" => $row["pregunta"], "promedio" => $row["promedio"]);
-
-
-				        //"id: " . $row["id_products"]. " descripcion: " . $row["descripcion"]. " precio" . $row["precio"];
-				    }
-				} else {
-				    echo "0 results";
-				}
-				return $resp;
-		}
-
-
-		
-		public function promedioXcriterios(){
-			
-			$resp =array();
-			$query = "SELECT descripcion,sum(valores_estudio)/sum(cantidad) as promedio FROM tbl_estudio as estudio, tbl_criterios as criterio where criterio.id_criterio= estudio.fk_criterio group by fk_criterio";
-
-			
-
-			$result = mysqli_query($this->connect, $query);
-
-				if ($result) {
-				    // output data of each row
-				    while($row = $result->fetch_assoc()) {
-				        $resp[] = array("criterio" => $row["descripcion"], "promedio" => $row["promedio"]);
-
-
-				        //"id: " . $row["id_products"]. " descripcion: " . $row["descripcion"]. " precio" . $row["precio"];
-				    }
-				} else {
-				    echo "0 results";
-				}
-				return $resp;
-		}
 	
 }
 
