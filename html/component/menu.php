@@ -40,8 +40,9 @@
 
                   <li><a><i class="fa fa-cogs"></i> Administración </a>
                     <ul class="nav child_menu">                      
-                      <!--<li><a href="?view=underconstruction"> Crear criterios </a></li>-->
-                      <!--<li><a href="?view=underconstruction"> Crear preguntas </a></li>-->
+                      <li><a href="?view=underconstruction"> Crear Empresa </a></li>
+                      <li><a href="?view=underconstruction"> Crear Unidad </a></li>
+                      <li><a href="?view=underconstruction"> Crear Departamento </a></li>
                       <li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
                     </ul>
                   </li>                     
