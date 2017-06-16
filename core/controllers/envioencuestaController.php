@@ -4,7 +4,7 @@
 */
 
 require ('core/models/validaEncuestaModels.php');
-require ('core/functions/cifrado.php');
+require ('core/bin/functions/cifrado.php');
 
 $models = new validaEncuestaModels();
 $cifrado= new cifrado();
