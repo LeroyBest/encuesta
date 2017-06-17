@@ -42,7 +42,7 @@
                     <ul class="nav child_menu">                      
                       <!--<li><a href="?view=underconstruction"> Crear criterios </a></li>-->
                       <!--<li><a href="?view=underconstruction"> Crear preguntas </a></li>-->
-                      <li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
+                      <li><a href="?view=send"> Enviar encuesta </a></li>
                     </ul>
                   </li>                     
                   

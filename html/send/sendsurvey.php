@@ -1,13 +1,13 @@
-<?php include('component/header.php'); ?>
-
+ <?php include(HTML_DIR . 'component/header.php'); ?>
 
   <body class="nav-sm">
     <div class="container body">
       <div class="main_container">
 
-       <?php include('component/menu.php'); ?>
 
-       <?php include('component/topbar.php'); ?>     
+	<?php include(HTML_DIR . 'component/menu.php'); ?>
+	<?php include(HTML_DIR . 'component/topbar.php'); ?>
+ 
           
         <!-- page content -->
 
@@ -34,11 +34,11 @@
                   </div>
                   <div class="x_content">
                   
-                  <form class="form-horizontal form-label-left" name="formenvioencuestas" method="post" action="?view=envioencuesta&mode=enviar">
+                  <form class="form-horizontal form-label-left" name="formenvioencuestas" method="post" action="?view=send&mode=enviar">
                       <div class="form-group">
                         
                         <div class="col-md-6 col-sm-9 col-xs-12 ">
-                          <input type="text" id="txtdepartamento" name="txtdepartamento" class="form-control" placeholder="Departamento a evaluar">
+                          <input type="text" id="depart" name="depart" class="form-control" placeholder="Departamento a evaluar">
                                                   
                         </div>
                       </div>
@@ -98,12 +98,12 @@
           </div>
           <div class="clearfix"></div>
         </footer>
-        <!-- /footer content -->
+        <!-- /footer content   <script src="views/app/js/validador.js"></script>-->
       </div>
     </div>
 
-      <?php include('views/component/footers.php'); ?>
-      <script src="views/js/validador.js"></script>
-      <script src="views/js/creatextbox.js"></script>
+    <?php include(HTML_DIR . 'component/footers.php'); ?>
+     
+      <script src="views/app/js/creatextbox.js"></script>
   </body>
 </html>

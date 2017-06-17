@@ -4,9 +4,7 @@ class Login {
 
   private $user;
   private $password;
-
-
-
+  private $db;
 
   public function __construct() {
     $this->db = new Conexion();
