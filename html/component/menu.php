@@ -39,6 +39,7 @@
                   </li>
 
                   <li><a><i class="fa fa-cogs"></i> Administración </a>
+<<<<<<< HEAD
                     <ul class="nav child_menu" >                      
                       <li><a >Empresa <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none">
@@ -65,6 +66,12 @@
                           </ul>
                       </li>
                       <li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
+=======
+                    <ul class="nav child_menu">                      
+                      <!--<li><a href="?view=underconstruction"> Crear criterios </a></li>-->
+                      <!--<li><a href="?view=underconstruction"> Crear preguntas </a></li>-->
+                      <li><a href="?view=send"> Enviar encuesta </a></li>
+>>>>>>> master
                     </ul>
                   </li>                     
                   
