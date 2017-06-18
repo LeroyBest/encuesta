@@ -39,10 +39,31 @@
                   </li>
 
                   <li><a><i class="fa fa-cogs"></i> Administración </a>
-                    <ul class="nav child_menu">                      
-                      <li><a href="?view=underconstruction"> Crear Empresa </a></li>
-                      <li><a href="?view=underconstruction"> Crear Unidad </a></li>
-                      <li><a href="?view=underconstruction"> Crear Departamento </a></li>
+                    <ul class="nav child_menu" >                      
+                      <li><a >Empresa <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none">
+                            <li class="sub_menu"><a href="?view=company&mode=new">Crear Empresa</a>
+                            </li>
+                            <li><a href="?view=company&mode=new">Editar Empresa</a>
+                            </li>                            
+                          </ul>
+                      </li>
+                      <li><a>Unidad <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none;">
+                            <li class="sub_menu"><a href="level2.html">Crear Unidad</a>
+                            </li>
+                            <li><a href="#level2_1">Editar Unidad</a>
+                            </li>
+                          </ul>
+                      </li>
+                      <li><a> Departamento <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none;">
+                            <li class="sub_menu"><a href="level2.html">Crear Departamento</a>
+                            </li>
+                            <li><a href="#level2_1">Editar Departamento</a>
+                            </li>
+                          </ul>
+                      </li>
                       <li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
                     </ul>
                   </li>                     
