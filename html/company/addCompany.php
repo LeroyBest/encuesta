@@ -14,9 +14,25 @@
         <div class="right_col" id="content" role="main">
           <div class="">
             <div class="page-title">
-            <div id="msg"></div>
+            <div id="msg">
+              <?php
+                 if(isset($_GET['success'])) {
+                   echo '<div class="alert alert-dismissible alert-success">
+                     <strong>Completado!</strong> se ha creado la empresa satisfactoriamente.
+                   </div>';
+                 }
+                 if(isset($_GET['error'])) {
+                   
+                     echo '<div class="alert alert-dismissible alert-danger">
+                         <strong>Error!</strong></strong> lo campos no puede estar vacío.
+                       </div>';
+                 }
+
+              ?>
+
+            </div>
               <div class="title_left">
-                <h3>Nueva Empresa </h3>
+                <h3>Empresa </h3>
               </div>
 
              
@@ -35,11 +51,11 @@
                   <div class="x_content">
                   
 
-                  <form class="form-horizontal form-label-left" name="formenvioencuestas" method="post" action="?view=company&mode=nuevo">
+                  <form class="form-horizontal form-label-left" name="formenvioencuestas" method="post" action="?view=company&mode=new">
                      <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                         <label>Empresa:</label>
-                        <input type="text" id="txtdepartamento" name="txtdepartamento" class="form-control" placeholder="Nombre de la empresa">
+                        <input type="text" id="txtCompany" name="txtCompany" class="form-control" placeholder="Nombre de la empresa">
                                                   
                       </div>
                     </div>
@@ -47,20 +63,20 @@
 
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
                         <label>Gerente:</label>
-                        <input type="text" id="txtdepartamento" name="txtdepartamento" class="form-control" placeholder="Nombre del gerente">
+                        <input type="text" id="txtGerente" name="txtGerente" class="form-control" placeholder="Nombre del gerente">
                                                   
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
                         <label>Email:</label>
-                        <input type="text" id="txtdepartamento" name="txtdepartamento" class="form-control" placeholder="Email del gerente">
+                        <input type="email" id="txtEmailGerente" name="txtEmailGerente" class="form-control" placeholder="Email del gerente">
                                                   
                       </div>
                     </div>
                    <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
-                          <button class="btn btn-success">ACEPTAR</button>
+                          <button class="btn btn-primary">ACEPTAR</button>
                           <button class="btn btn-danger">CANCELAR</button>
                                                   
                       </div>

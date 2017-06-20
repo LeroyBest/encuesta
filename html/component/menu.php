@@ -43,9 +43,9 @@
                     <ul class="nav child_menu" >                      
                       <li><a >Empresa <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none">
-                            <li class="sub_menu"><a href="?view=company&mode=new">Crear Empresa</a>
+                            <li class="sub_menu"><a href="?view=company&mode=add">Crear Empresa</a>
                             </li>
-                            <li><a href="?view=company&mode=new">Editar Empresa</a>
+                            <li><a href="?view=company&mode=edit">Editar Empresa</a>
                             </li>                            
                           </ul>
                       </li>
@@ -65,12 +65,13 @@
                             </li>
                           </ul>
                       </li>
-                      <li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
-                    <ul class="nav child_menu">                      
+                      <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>-->
+                      <li><a href="?view=send"> Enviar encuesta </a></li>
+                    <!--<ul class="nav child_menu">                      
 
                       <li><a href="?view=send"> Enviar encuesta </a></li>
 
-                    </ul>
+                    </ul>-->
                   </li>                     
                   
                   

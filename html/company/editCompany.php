@@ -28,7 +28,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Mis Encuestas</h2>
+                    <h2>Editar Empresa</h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -37,8 +37,30 @@
 
                  
                     <a href="?view=company&mode=new">NUEVA </a>
-                
 
+                    <div class="form-group">
+                      <div class="col-md-7 col-sm-9 col-xs-12 rows ">
+                        <label>Buscar:</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-primary"><i class ="">Buscar</i></button>
+                            </span>
+                        </div>                      
+                      </div>
+                    </div>
+                
+                    <table class="table table-striped  projects">
+                          <thead>
+                            <th>Empresa</th>
+                            <th>Gerente</th>
+                            <th>Email</th>
+                            <th></th>
+                          </thead>
+                          <tbody>
+                                     
+                        </tbody>
+                  </table>                
                       
 
                       
