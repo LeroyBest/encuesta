@@ -5,6 +5,7 @@ class Send {
   private $idencuesta;
   private $departamento;
   private $num;
+  private $link;
   private $db;
 
 	public function __construct() {
@@ -23,18 +24,19 @@ class Send {
 				
 		  }
 		} catch(Exception $error) {
-		  header('location: '.$url .$error->getMessage());
+		  //header('location: '.$url .$error->getMessage());
 		  exit;
 		}
 	}
   
 	public function EnviarEncuesta() {
 
-        $this->Errors('?view=send&mode=enviar&error=');
+       $this->Errors('?view=send&mode=enviar&error=');
 		$cifrado = new Cifrado();
 		$para;
 		$mensaje;
-
+        $link;
+		
 		for ($i=0; $i < $this->num; $i++) { 
 		$para=$_POST['correo'.$i];
 		$nombre=$_POST['nombre'.$i];
@@ -45,8 +47,8 @@ class Send {
 
 		$sn = $cifrado ->encodeBase64($this->idencuesta);
 		$eval = md5($para);
-		$link = APP_URL . '?view=preguntas&mode=list&sn='.$sn.'&eval='. $eval;
-		$mail = new PHPMailer();	
+		$this->link = APP_URL . '?view=survey&mode=list&sn='.$sn.'&eval='. $eval;
+		/*$mail = new PHPMailer();	
 		$mail->CharSet = "UTF-8";
 		$mail->Encoding = "quoted-printable";
 
@@ -60,18 +62,19 @@ class Send {
 		$mail->SetFrom("info@507developers.com", "Encuesta");	
 		$mail->AddAddress($para); 
 		$mail->Subject = 'Deseamos saber su opinión... ';
-		$mail->MsgHTML(EmailTemplate($nombre,$link ));
+		$mail->MsgHTML(EmailTemplate($nombre,$link ));*/
 
-		//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
-		$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',unidad='$this->departamento',encuesta='$this->idencuesta',completado='0'");
-		if($this->db->affected_rows>0){
-			$mail->send();
-        } else {
-          
-        } 
+			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
+			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',unidad='$this->departamento',encuesta='$this->idencuesta',completado='0'");
+			//if($this->db->affected_rows>0){
+				//$mail->send();
+			//} else {
+			  
+			//} 
 
-	}
-	header('location: ?view=home');
+		}
+		echo $this->link;
+	//header('location: ?view=home');
 
 
 

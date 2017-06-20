@@ -10,7 +10,7 @@ define('DB_NAME','507survey');
 define('HTML_DIR','html/');
 define('APP_URL','http://'. $_SERVER['SERVER_NAME'].'/demos/encuesta/');
 
-
+define('QUANTITY_QTS',5);
 
 require('core/models/class.Conexion.php');
 require('core/models/class.phpmailer.php');
