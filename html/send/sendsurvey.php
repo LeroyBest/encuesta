@@ -49,7 +49,7 @@
                           <select class="form-control " name="selencuesta">
                             <?php
                               foreach ($resp as $key => $value) {
-                                echo '<option name="prueba" value="'.$resp[$key ]["id"].'">'.$resp[$key ]["titulo"].'</option>';
+                                echo '<option name="prueba" value="'.$resp[$key ]["id_encuesta"].'">'.$resp[$key ]["titulo"].'</option>';
 
                               }
                             ?>
