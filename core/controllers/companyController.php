@@ -14,7 +14,12 @@
 		    }
 		break;
 		case 'edit':
+			if($_POST){
+				$company->listCompany();
+			}
+			else{
 			include(HTML_DIR . 'company/editCompany.php');
+			}
 		break;
 		default:
 		    include(HTML_DIR . 'company/addCompany.php');

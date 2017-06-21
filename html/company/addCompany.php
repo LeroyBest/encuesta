@@ -51,7 +51,7 @@
                   <div class="x_content">
                   
 
-                  <form class="form-horizontal form-label-left" name="formenvioencuestas" method="post" action="?view=company&mode=new">
+                  <form class="form-horizontal form-label-left" name="formAddCompany" method="post" action="?view=company&mode=add">
                      <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                         <label>Empresa:</label>
