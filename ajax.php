@@ -5,6 +5,9 @@ if($_POST){
 		case 'login':
 			require('core/bin/ajax/goLogin.php');
 		break;
+		case 'edit':
+			require('core/controllers/companyController');
+		break;
 		default:
 			header('location:index.php');
 		break;

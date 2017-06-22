@@ -40,7 +40,7 @@
                           <div class="input-group">
                             <input type="text" id="txtbuscarEmpresa" name="txtbuscarEmpresa" class="form-control">
                               <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary"><i class ="">Buscar</i></button>
+                                <button type="submit" id="btnBuscarCo" class="btn btn-primary"><i class ="">Buscar</i></button>
                               </span>
                           </div>                      
                         </div>
