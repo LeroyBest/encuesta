@@ -40,7 +40,7 @@
                           <div class="input-group">
                             <input type="text" id="txtbuscarEmpresa" name="txtbuscarEmpresa" class="form-control">
                               <span class="input-group-btn">
-                                <button type="submit" id="btnBuscarCo" class="btn btn-primary"><i class ="">Buscar</i></button>
+                                <input  id="btnBuscarCo" class="btn btn-primary" type="button" value="Buscar">
                               </span>
                           </div>                      
                         </div>
@@ -48,14 +48,14 @@
                     </form>
 
 
-                    <table class="table table-striped  projects">
+                    <table class="table table-condensed table-hover dataTable no-footer" id="tblCompany">
                           <thead>
                             <th>Empresa</th>
                             <th>Gerente</th>
                             <th>Email</th>
                             <th></th>
                           </thead>
-                          <tbody>
+                          <tbody id="cuerpo">
                                <?php
 
                 if(isset($resp)){
@@ -100,6 +100,6 @@
     </div>
 
     <?php include(HTML_DIR . 'component/footers.php'); ?>
-
+    <script src="views/app/js/editCompany.js"></script>
   </body>
 </html>
