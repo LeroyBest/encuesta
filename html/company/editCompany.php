@@ -85,6 +85,98 @@
               </div>
             </div>
           </div>
+
+                      <div class="container">
+                        <!-- Modal -->
+                        <div class="modal fade" id="editCompany" role="dialog">
+                          <div class="modal-dialog">
+                          
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Editar Empresa</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                  
+                                  <div class="panel panel-primary">
+                                    <div class="panel-body">
+
+                                        <div class="table-responsive">
+
+                          <form id="formEditCompany">             
+                            <div class="row">
+                              <div class="col-md-3 form-group">
+                                <label class="control-label" for="txtIdEdit">Empresa *</label>
+                              </div>  
+                              <div class="col-md-7 form-group">
+                                <div class="controls input-group">
+                                  <input class="form-control" name="txtIdEdit" id="txtIdEdit"  type="text" readonly required>
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-building"></i>
+                                  </div>
+                                </div>
+                              </div>    
+                            </div>              
+
+                            <div class="row">
+                              <div class="col-md-3 form-group">
+                                <label class="control-label" for="txtNombreEdit">Gerente *</label>
+                              </div>  
+                              <div class="col-md-7 form-group">
+                                <div class="controls input-group">
+                                  <input class="form-control" name="txtNombreEdit" id="txtNombreEdit"  type="text" required>
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                  </div>
+                                </div>
+                              </div>    
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-3 form-group">
+                                <label class="control-label" for="txtEmpresaEdit">Correo*</label>
+                              </div>  
+                              <div class="col-md-7 form-group">
+                                <div class="controls input-group">
+                                  <input class="form-control" name="txtEmpresaEdit" id="txtEmpresaEdit"  type="text" required>
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form> 
+                                        </div>
+                                              
+                                          <!-- /.panel-body -->
+                                      </div> 
+                                      </div>    
+                                  </div>
+                                 </div>
+                              <div class="modal-footer">
+                              <button type="button" id="btnEditCliente" class="btn btn-success" data-dismiss="modal">GUARDAR</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        
+                      </div>
+
+
+                      <div class="panel-footer">
+                        
+                      </div>
+
+                    </div>
+
+
+
         </div>
         <!-- /page content -->
 
