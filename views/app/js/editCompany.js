@@ -14,9 +14,9 @@ $(document).ready(function(){
 				$("tbody").empty();
 	       		$.each( datos, function( key, value ) {
 	       		
-		  			console.log(value.descripcion + value.colaborador + value.correo );
-		  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td><a class='btn btn-primary btn-xs' onclick='editCompany()'><i class='fa fa-pencil'></i></a><a class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i></a></td></tr>");
-				
+		  			//console.log(value.descripcion + value.colaborador + value.correo );
+		  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td><a class='btn btn-primary btn-xs' onclick='editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'"'+")'><i class='fa fa-pencil'></i></a><a class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i></a></td></tr>");
+				console.log("onclick='editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.descripcion+'",'+'"'+value.descripcion+'"'+")'");
 				});
 
 
@@ -32,16 +32,14 @@ $(document).ready(function(){
 	});
 });
 
-function editCompany(){
+function editCompany(id,empresa,gerente,correo){
 	var valida="eliminarCliente";
 
-		/*$('#txtIdEdit').val(id);
-		$('#txtNombreEdit').val(nombre);
-		$('#txtEmpresaEdit').val(empresa);
-		$('#txtCedulaEdit').val(ruc);
-		$('#txtCorreoClieEdit').val(correo);
-		$('#txtDireccionEdit').val(direccion);
-		$('#txtTelefonoClieEdit').val(telefono);*/
+	
+		$('#txtEmpresa').val(empresa);
+		$('#txtGerente').val(gerente);
+		$('#txtCorreo').val(correo);
+	
 
 	   $("#editCompany").modal();
 

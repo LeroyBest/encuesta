@@ -109,11 +109,11 @@
                           <form id="formEditCompany">             
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtIdEdit">Empresa *</label>
+                                <label class="control-label" for="txtEmpresa">Empresa *</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtIdEdit" id="txtIdEdit"  type="text" readonly required>
+                                  <input class="form-control" name="txtEmpresa" id="txtEmpresa"  type="text" required>
                                   <div class="input-group-addon">
                                     <i class="fa fa-building"></i>
                                   </div>
@@ -123,11 +123,11 @@
 
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtNombreEdit">Gerente *</label>
+                                <label class="control-label" for="txtGerente">Gerente *</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtNombreEdit" id="txtNombreEdit"  type="text" required>
+                                  <input class="form-control" name="txtGerente" id="txtGerente"  type="text" required>
                                   <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                   </div>
@@ -137,11 +137,11 @@
 
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtEmpresaEdit">Correo*</label>
+                                <label class="control-label" for="txtCorreo">Correo*</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtEmpresaEdit" id="txtEmpresaEdit"  type="text" required>
+                                  <input class="form-control" name="txtCorreo" id="txtCorreo"  type="text" required>
                                   <div class="input-group-addon">
                                     <i class="fa fa-envelope"></i>
                                   </div>
