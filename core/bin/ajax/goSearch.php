@@ -6,7 +6,7 @@
 		$buscaEmpresa =  $db->real_escape_string($_POST['txtbuscarEmpresa']);
 
 		$HTML = false;
-		$sql = $db->query("SELECT * FROM tbl_empresa WHERE descripcion like '%$buscaEmpresa%'");
+		$sql = $db->query("SELECT * FROM tbl_empresa WHERE descripcion like '%$buscaEmpresa%' and activo =1");
 		
 		if($db->rows($sql) > 0) {
 			while($data = $db->recorrer($sql)) {

@@ -89,7 +89,7 @@
                       <div class="container">
                         <!-- Modal -->
                         <div class="modal fade" id="editCompany" role="dialog">
-                          <div class="modal-dialog">
+                          <div class="modal-dialog modal-lg">
                           
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -101,7 +101,7 @@
                                 <div class="row">
                                   <div class="col-md-12">
                                   
-                                  <div class="panel panel-primary">
+                                  
                                     <div class="panel-body">
 
                                         <div class="table-responsive">
@@ -153,7 +153,7 @@
                                               
                                           <!-- /.panel-body -->
                                       </div> 
-                                      </div>    
+                                         
                                   </div>
                                  </div>
                               <div class="modal-footer">
@@ -174,6 +174,45 @@
                       </div>
 
                     </div>
+
+                  <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteCompany" role="dialog">
+                      <div class="modal-dialog modal-sm">                        
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header alert alert-dismissible alert-danger">
+                            <strong>Confirmar Borrado!</strong>
+                          </div>
+                          <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-12">                                
+                                
+                                  <div class="panel-body">
+
+                                    <strong>¿Esta seguro de borrar esta información?</strong>
+                                            
+                                        <!-- /.panel-body -->
+                                  </div> 
+                                       
+                                </div>
+                              </div>
+                            <div class="modal-footer">
+                              <button type="button" id="btnEditEmpresa" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+                            </div>
+                          </div>                          
+                        </div>
+                      </div>                      
+                    </div>
+
+
+                      <div class="panel-footer">
+                        
+                      </div>
+
+                  </div>
 
 
 
