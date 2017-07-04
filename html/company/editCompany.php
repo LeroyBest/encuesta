@@ -198,7 +198,7 @@
                                 </div>
                               </div>
                             <div class="modal-footer">
-                              <button type="button" id="btnEditEmpresa" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                              <button type="button" id="btnDeletEmpresa" class="btn btn-success" data-dismiss="modal">Aceptar</button>
                               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 
                             </div>

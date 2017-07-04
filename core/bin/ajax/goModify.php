@@ -11,12 +11,12 @@ echo $id_empresa,$Empresa,$gerente,$correo;
 		
 		$HTML = false;
 		$sql = $db->query("UPDATE tbl_empresa SET descripcion='$Empresa',colaborador='$gerente',correo='$correo' WHERE id_empresa = $id_empresa");
-		echo ("UPDATE tbl_empresa SET descripcion='$Empresa',colaborador=$gerente,correo=$correo WHERE id_empresa = $id_empresa");
+		
 		if($db->affected_rows>0){
-        	echo 'bien';
+        	echo 1;
         } 
         else {
-           echo 'error';
+        	echo 0;
         }
 	
  
