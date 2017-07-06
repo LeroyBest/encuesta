@@ -56,24 +56,9 @@
                             <th></th>
                           </thead>
                           <tbody id="cuerpo">
-                               <?php
-
-                if(isset($resp)){
-                               
-                                if(false != $resp) {
-                                  foreach ($resp as $key => $value) {
-                                    
-                                    //echo ""$resp[$key ]['preguntas'];
-                                    echo '<tr><td><b>'.$resp[$key ]["descripcion"].'</b></td>';
-                                    echo '<td>'.$resp[$key ]["colaborador"].'</td>';
-                                    echo '<td>'.$resp[$key ]["correo"].'</td>';
-                                    echo '<td><button id ="reportpdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button></td></tr>';
-                                  }
-                                }
-                              }
-                              ?>      
-                        </tbody>
-                  </table>                
+                                     
+                          </tbody>
+                    </table>                
                       
 
                       

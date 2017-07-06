@@ -51,17 +51,17 @@
                       </li>
                       <li><a>Unidad <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none;">
-                            <li class="sub_menu"><a href="level2.html">Crear Unidad</a>
+                            <li class="sub_menu"><a href="?view=unity&mode=add">Crear Unidad</a>
                             </li>
-                            <li><a href="#level2_1">Editar Unidad</a>
+                            <li><a href="?view=company&mode=edit">Editar Unidad</a>
                             </li>
                           </ul>
                       </li>
                       <li><a> Departamento <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none;">
-                            <li class="sub_menu"><a href="level2.html">Crear Departamento</a>
+                            <li class="sub_menu"><a href="?view=company&mode=add">Crear Departamento</a>
                             </li>
-                            <li><a href="#level2_1">Editar Departamento</a>
+                            <li><a href="?view=company&mode=edit">Editar Departamento</a>
                             </li>
                           </ul>
                       </li>
