@@ -77,8 +77,25 @@
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Empresa:</label>
-                          <input type="text" id="txtEmpresa" name="txtEmpresa" class="form-control" placeholder="Empresa a la cual esta asociada">
-                                                    
+                          <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
+                                
+                              
+                          <option value='0'>Sin Empresa</option>
+                            <?php
+
+                              
+                             if(false != $resp) {
+                                foreach ($resp as $key => $value) {
+                                  
+                                  //echo ""$resp[$key ]['preguntas'];
+                                  echo "<option value='".$resp[$key ]["id_empresa"]."'>".$resp[$key ]["descripcion"]."</option>";
+                                  
+                                  
+                                }
+                              }
+                            ?>
+                          </select>
+
                         </div>
                       </div>
                       <div class="form-group">

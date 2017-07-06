@@ -9,7 +9,9 @@
 		case 'add':
 			if($_POST) {
 		    	$unity->insertNewUnity();
+
 		    } else {
+		    	$resp =$unity->listCompany();
 		    	include(HTML_DIR . 'unity/addUnity.php');
 		    }
 		break;

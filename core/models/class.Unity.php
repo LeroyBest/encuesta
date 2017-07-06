@@ -34,22 +34,21 @@ class Unity {
 
 	public function listCompany(){
 
-		$sql = $db->query("SELECT * FROM tbl_empresa WHERE  activo =1");
+		$sql = $this->db->query("SELECT * FROM tbl_empresa WHERE  activo =1");
 			
-			if($db->rows($sql) > 0) {
-				while($data = $db->recorrer($sql)) {
-					$HTML[$data['id_empresa']] = $data;
+			if($this->db->rows($sql) > 0) {
+				while($data = $this->db->recorrer($sql)) {
+					$resp[$data['id_empresa']] = $data;
 				}
-				include(HTML_DIR . 'unity/addUnity.php');
+				//include(HTML_DIR . 'unity/addUnity.php');
 			}
 			else
 			{
 				$resp = false;
 				header('location: ?view=unity&mode=add');
 			}
-
-			$db->liberar($sql); 
-			$db->close(); 
+			return $resp;
+			
 	}
 
 
