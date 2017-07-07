@@ -38,9 +38,9 @@
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Buscar:</label>
                           <div class="input-group">
-                            <input type="text" id="txtbuscarEmpresa" name="txtbuscarEmpresa" class="form-control">
+                            <input type="text" id="txtbuscarUnidad" name="txtbuscarUnidad" class="form-control">
                               <span class="input-group-btn">
-                                <input  id="btnBuscarCo" class="btn btn-primary" type="button" value="Buscar">
+                                <input  id="btnBuscarUn" class="btn btn-primary" type="button" value="Buscar">
                               </span>
                           </div>                      
                         </div>
@@ -48,7 +48,7 @@
                     </form>
 
 
-                    <table class="table table-condensed table-hover dataTable no-footer" id="tblCompany">
+                    <table class="table table-condensed table-hover dataTable no-footer" id="tblUnity">
                           <thead>
                             <th>Unidad</th>
                             <th>Gerente</th>
@@ -217,6 +217,6 @@
     </div>
 
     <?php include(HTML_DIR . 'component/footers.php'); ?>
-    <script src="views/app/js/editCompany.js"></script>
+    <script src="views/app/js/editUnity.js"></script>
   </body>
 </html>
