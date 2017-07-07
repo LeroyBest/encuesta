@@ -53,7 +53,7 @@
                           <ul class="nav child_menu" style="display: none;">
                             <li class="sub_menu"><a href="?view=unity&mode=add">Crear Unidad</a>
                             </li>
-                            <li><a href="?view=company&mode=edit">Editar Unidad</a>
+                            <li><a href="?view=unity&mode=edit">Editar Unidad</a>
                             </li>
                           </ul>
                       </li>

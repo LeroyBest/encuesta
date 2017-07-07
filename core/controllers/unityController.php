@@ -15,6 +15,14 @@
 		    	include(HTML_DIR . 'unity/addUnity.php');
 		    }
 		break;
+		case 'edit':
+			if($_POST){
+				//$company->listCompany();
+			}
+			else{
+			include(HTML_DIR . 'unity/editUnity.php');
+			}
+		break;
 		default:
 		    include(HTML_DIR . 'unity/addUnity.php');
 		break;
