@@ -9,23 +9,23 @@ $(document).ready(function(){
 	});
 });
 
-function editCompany(id,empresa,gerente,correo){
+function editCompany(id,unidad,jefe,correo){
 	var valida="eliminarCliente";
-	var company = $('#txtbuscarEmpresa').val();
+	var unity = $('#txtbuscarUnidad').val();
 	
-		$('#txtEmpresa').val(empresa);
-		$('#txtGerente').val(gerente);
+		$('#txtUnidad').val(unidad);
+		$('#txtJefe').val(jefe);
 		$('#txtCorreo').val(correo);
 	
 
-	   $("#editCompany").modal();
+	   $("#editUnity").modal();
 
 
-	  $('#btnEditEmpresa').on('click',function(){
+	  $('#btnEditUnidad').on('click',function(){
 	
   			var connect, form, response, result;
 
-	    	form = $( "#formEditCompany").serialize()+ "&id="+id;
+	    	form = $( "#formEditUnity").serialize()+ "&id="+id+"&seccion=Unidad";
 	    	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	    	connect.onreadystatechange = function() {
 		        if(connect.readyState == 4 && connect.status == 200) {
@@ -44,7 +44,7 @@ function editCompany(id,empresa,gerente,correo){
 
 function deleteCompany(id){
 
-	var company = $('#txtbuscarEmpresa').val();
+	var company = $('#txtbuscarUnidad').val();
 
 		$("#deleteCompany").modal();
 

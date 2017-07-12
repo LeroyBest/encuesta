@@ -74,7 +74,7 @@
 
                       <div class="container">
                         <!-- Modal -->
-                        <div class="modal fade" id="editCompany" role="dialog">
+                        <div class="modal fade" id="editUnity" role="dialog">
                           <div class="modal-dialog modal-lg">
                           
                             <!-- Modal content-->
@@ -92,14 +92,14 @@
 
                                         <div class="table-responsive">
 
-                          <form id="formEditCompany">             
+                          <form id="formEditUnity">             
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtEmpresa">Empresa *</label>
+                                <label class="control-label" for="txtUnidad">Unidad *</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtEmpresa" id="txtEmpresa"  type="text" required>
+                                  <input class="form-control" name="txtUnidad" id="txtUnidad"  type="text" required>
                                   <div class="input-group-addon">
                                     <i class="fa fa-building"></i>
                                   </div>
@@ -109,11 +109,11 @@
 
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtGerente">Gerente *</label>
+                                <label class="control-label" for="txtJefe">Jefe *</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtGerente" id="txtGerente"  type="text" required>
+                                  <input class="form-control" name="txtJefe" id="txtJefe"  type="text" required>
                                   <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                   </div>
@@ -134,6 +134,8 @@
                                 </div>
                               </div>
                             </div>
+
+                            
                           </form> 
                                         </div>
                                               
@@ -143,7 +145,7 @@
                                   </div>
                                  </div>
                               <div class="modal-footer">
-                              <button type="button" id="btnEditEmpresa" class="btn btn-success" data-dismiss="modal">GUARDAR</button>
+                              <button type="button" id="btnEditUnidad" class="btn btn-success" data-dismiss="modal">GUARDAR</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
                               </div>

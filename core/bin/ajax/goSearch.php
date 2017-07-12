@@ -9,7 +9,7 @@
 
 	switch (isset($_POST['seccion']) ? $_POST['seccion'] : null) {
 		case 'Empresa':
-			if(strlen($buscaEmpresa) < 4){
+			if(strlen($buscaEmpresa) < 3){
 			$HTML = 0;
 			}
 			else
@@ -28,7 +28,7 @@
 			}
 		break;
 		case 'Unidad':
-			if(strlen($buscaUnidad) < 4){
+			if(strlen($buscaUnidad) < 2){
 			$HTML = 0;
 			}
 			else
