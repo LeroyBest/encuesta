@@ -20,7 +20,8 @@
 				//$company->listCompany();
 			}
 			else{
-			include(HTML_DIR . 'unity/editUnity.php');
+				$resp =$unity->listCompany();
+				include(HTML_DIR . 'unity/editUnity.php');
 			}
 		break;
 		default:

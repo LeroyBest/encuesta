@@ -90,7 +90,7 @@ function listUnity(unity){
 		       	{
 		       		$.each( datos, function( key, value ) {
 		       		
-			  			//console.log(value.descripcion + value.colaborador + value.correo );
+			  			console.log("editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'"'+")");
 			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteCompany("+'"'+value.id_empresa+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
 					
 					});

@@ -135,6 +135,36 @@
                               </div>
                             </div>
 
+                            <div class="row">
+                              <div class="col-md-3 form-group">
+                                <label class="control-label" for="txtCorreo">Empresa*</label>
+                              </div>  
+                              <div class="col-md-7 form-group">
+                                <div class="controls input-group">
+                                  <input class="form-control" name="txtCorreo" id="txtCorreo"  type="text" required>
+                                  <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
+                                    <option id="empresaActual" value='0'>Sin Empresa</option>
+                                    <?php
+
+                                        
+                                       if(false != $resp) {
+                                          foreach ($resp as $key => $value) {
+                                            
+                                            //echo ""$resp[$key ]['preguntas'];
+                                            echo "<option value='".$resp[$key ]["id_empresa"]."'>".$resp[$key ]["descripcion"]."</option>";
+                                            
+                                            
+                                          }
+                                        }
+                                      ?>
+                                  </select>
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                             
                           </form> 
                                         </div>
