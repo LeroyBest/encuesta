@@ -9,18 +9,17 @@ $(document).ready(function(){
 	});
 });
 
-function editCompany(id,unidad,jefe,correo){
-	var valida="eliminarCliente";
+function editUnity(id,unidad,jefe,correo,empresa,nombremp){
 	var unity = $('#txtbuscarUnidad').val();
 	
 		$('#txtUnidad').val(unidad);
 		$('#txtJefe').val(jefe);
 		$('#txtCorreo').val(correo);
-	
+		$('#empresaActual').attr("value",""+empresa+"");
+$('#empresaActual').val(nombremp).change();
 
 	   $("#editUnity").modal();
-
-
+//console.log(nombremp);
 	  $('#btnEditUnidad').on('click',function(){
 	
   			var connect, form, response, result;
@@ -90,8 +89,8 @@ function listUnity(unity){
 		       	{
 		       		$.each( datos, function( key, value ) {
 		       		
-			  			console.log("editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+value.colaborador+'",'++")");
-			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteCompany("+'"'+value.id_empresa+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
+			  			console.log("editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+value.colaborador+'",'+value.empresa+'",'+")");
+			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editUnity("+'"'+value.id_unidad+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+'"'+value.fk_empresa+'",'+'"'+value.empresa+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteCompany("+'"'+value.id_empresa+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
 					
 					});
 
