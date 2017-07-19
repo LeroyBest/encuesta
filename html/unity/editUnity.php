@@ -141,7 +141,7 @@
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
-                                  <input class="form-control" name="txtCorreo" id="txtCorreo"  type="text" required>
+                                  
                                   <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
                                     <option id="empresaActual" value='0'>Sin Empresa</option>
                                     <?php
@@ -195,7 +195,7 @@
 
                   <div class="container">
                     <!-- Modal -->
-                    <div class="modal fade" id="deleteCompany" role="dialog">
+                    <div class="modal fade" id="deleteUnity" role="dialog">
                       <div class="modal-dialog modal-sm">                        
                         <!-- Modal content-->
                         <div class="modal-content">
@@ -216,7 +216,7 @@
                                 </div>
                               </div>
                             <div class="modal-footer">
-                              <button type="button" id="btnDeletEmpresa" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                              <button type="button" id="btnDeleteUnity" class="btn btn-success" data-dismiss="modal">Aceptar</button>
                               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 
                             </div>

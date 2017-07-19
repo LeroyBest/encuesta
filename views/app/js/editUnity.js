@@ -16,7 +16,7 @@ function editUnity(id,unidad,jefe,correo,empresa,nombremp){
 		$('#txtJefe').val(jefe);
 		$('#txtCorreo').val(correo);
 		$('#empresaActual').attr("value",""+empresa+"");
-$('#empresaActual').val(nombremp).change();
+$('#empresaActual').text(nombremp);
 
 	   $("#editUnity").modal();
 //console.log(nombremp);
@@ -41,17 +41,17 @@ $('#empresaActual').val(nombremp).change();
 		});		
 }
 
-function deleteCompany(id){
+function deleteUnity(id){
 
-	var company = $('#txtbuscarUnidad').val();
+	var unity = $('#txtbuscarUnidad').val();
 
-		$("#deleteCompany").modal();
+		$("#deleteUnity").modal();
 
-		$('#btnDeletEmpresa').on('click',function(){
+		$('#btnDeleteUnity').on('click',function(){
 	
   			var connect, form, response, result;
 
-	    	form = "id="+id;
+	    	form = "id="+id+"&seccion=Unidad";
 	    	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	    	connect.onreadystatechange = function() {
 		        if(connect.readyState == 4 && connect.status == 200) {
@@ -82,6 +82,7 @@ function listUnity(unity){
 	        	var datos = JSON.parse(connect.responseText);
 	       		//console.log(datos);
 				$("tbody").empty();
+				$("#msg").empty();
 				if(datos == 0 ){
 					$("#msg").html('<div class="alert alert-warning"><b>Verificar</b> No se encontraron registros con esa descripcion, favor escribir palabra completa para una busqueda mas eficiente. <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>');
 		       	}
@@ -90,7 +91,7 @@ function listUnity(unity){
 		       		$.each( datos, function( key, value ) {
 		       		
 			  			console.log("editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+value.colaborador+'",'+value.empresa+'",'+")");
-			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editUnity("+'"'+value.id_unidad+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+'"'+value.fk_empresa+'",'+'"'+value.empresa+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteCompany("+'"'+value.id_empresa+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
+			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editUnity("+'"'+value.id_unidad+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+'"'+value.fk_empresa+'",'+'"'+value.empresa+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteUnity("+'"'+value.id_unidad+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
 					
 					});
 

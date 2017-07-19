@@ -25,7 +25,7 @@ function editCompany(id,empresa,gerente,correo){
 	
   			var connect, form, response, result;
 
-	    	form = $( "#formEditCompany").serialize()+ "&id="+id;
+	    	form = $( "#formEditCompany").serialize()+ "&id="+id+"&seccion=Empresa";
 	    	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	    	connect.onreadystatechange = function() {
 		        if(connect.readyState == 4 && connect.status == 200) {
@@ -52,7 +52,7 @@ function deleteCompany(id){
 	
   			var connect, form, response, result;
 
-	    	form = "id="+id;
+	    	form = "id="+id+"&seccion=Empresa";
 	    	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	    	connect.onreadystatechange = function() {
 		        if(connect.readyState == 4 && connect.status == 200) {

@@ -28,11 +28,13 @@
 			$unidad =  $db->real_escape_string($_POST['txtUnidad']);
 			$jefe =	$db->real_escape_string($_POST['txtJefe']);
 			$correo	 =	$db->real_escape_string($_POST['txtCorreo']);
+			$empresa =	$db->real_escape_string($_POST['txtEmpresa']);
+			
 			//echo $id_empresa,$Empresa,$gerente,$correo;
 			
 			$HTML = false;
-			$sql = $db->query("UPDATE tbl_unidad SET descripcion='$unidad',colaborador='$jefe',correo='$correo' WHERE id_unidad = $id_unidad");
-			echo "UPDATE tbl_unidad SET descripcion='$unidad',colaborador='$jefe',correo='$correo' WHERE id_unidad = $id_unidad";
+			$sql = $db->query("UPDATE tbl_unidad SET descripcion='$unidad',colaborador='$jefe',correo='$correo', fk_empresa=$empresa WHERE id_unidad = $id_unidad");
+			echo "UPDATE tbl_unidad SET descripcion='$unidad',colaborador='$jefe',correo='$correo', fk_empresa=$empresa WHERE id_unidad = $id_unidad";
 			if($db->affected_rows>0){
 	        	echo 1;
 	        } 
