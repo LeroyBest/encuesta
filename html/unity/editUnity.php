@@ -33,7 +33,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form method="post" name="formEditCompany" action="?view=company&mode=edit">
+                    <form method="post" name="formEditUnity" action="?view=unity&mode=edit">
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Buscar:</label>

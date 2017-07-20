@@ -14,9 +14,26 @@
         <div class="right_col" id="content" role="main">
           <div class="">
             <div class="page-title">
-            <div id="msg"></div>
+            <div id="msg">
+              
+              <?php
+                 if(isset($_GET['success'])) {
+                   echo '<div class="alert alert-dismissible alert-success">
+                     <strong>Completado!</strong> se ha creado la empresa satisfactoriamente.
+                   </div>';
+                 }
+                 if(isset($_GET['error'])) {
+                   
+                     echo '<div class="alert alert-dismissible alert-danger">
+                         <strong>Error!</strong></strong> lo campos no puede estar vacío.
+                       </div>';
+                 }
+
+              ?>
+
+            </div>
               <div class="title_left">
-                <h3>Home </h3>
+                <h3>Departamento</h3>
               </div>
 
              
@@ -28,44 +45,81 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Mis Encuestas</h2>
+                    <h2>Crear departamento</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                   
+                    <form class="form-horizontal form-label-left" name="formAddUnity" method="post" action="?view=unity&mode=add">
+                      <div class="form-group">
+                        <div class="col-md-7 col-sm-9 col-xs-12 rows ">
+                          <label>Departamento:</label>
+                          <input type="text" id="txtUnidad" name="txtUnidad" class="form-control" placeholder="Nombre del Departamento">
+                                                    
+                        </div>
+                      </div>
+                      <div class="form-group">
 
+                        <div class="col-md-7 col-sm-9 col-xs-12 ">
+                          <label>Jefe:</label>
+                          <input type="text" id="txtJefe" name="txtJefe" class="form-control" placeholder="Nombre del jefe">
+                                                    
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-7 col-sm-9 col-xs-12 ">
+                          <label>Email:</label>
+                          <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Email del jefe">
+                                                    
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-7 col-sm-9 col-xs-12 ">
+                          <label>Unidad:</label>
+                          <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
+                                
+                              
+                          <option value='0'>Sin Unidad</option>
+                            <?php
+
+                              
+                             if(false != $resp) {
+                                foreach ($resp as $key => $value) {
+                                  
+                                  //echo ""$resp[$key ]['preguntas'];
+                                  echo "<option value='".$resp[$key ]["id_empresa"]."'>".$resp[$key ]["descripcion"]."</option>";
+                                  
+                                  
+                                }
+                              }
+                            ?>
+                          </select>
+
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 ">
+                          <label>Personal:</label>
+                          <div class="form-inline">
+                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4 form-control" placeholder="Nombre del colaborador">
+                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4 form-control" placeholder="Email del colaborador">                      
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-7 col-sm-9 col-xs-12 ">
+                            <button class="btn btn-success" alt="qer">ACEPTAR</button>
+                            <button class="btn btn-danger">CANCELAR</button>
+                                                    
+                        </div>
+                      </div>
+                    </form>
                  
                     
-<table class="table table-striped  projects">
-        <thead>
-          <th>Titulo</th>
-          <th>Unidad Evaluada</th>
-          <th>Fecha de Creacion</th>
-          <th>Completadas</th>
-          <th>Total Enviadas</th>
-          <th></th>
-        </thead>
-          <tbody>
-                   
-<?php
-
-//print_r($resp);
-if(false != $resp) {
-	foreach ($resp as $key => $value) {
-		
-	  //echo ""$resp[$key ]['preguntas'];
-	  echo '<tr><td><b>'.$resp[$key ]["titulo"].'</b></td>';
-	  echo '<td>'.$resp[$key ]["unidad"].'</td>';
-	  echo '<td>'.$resp[$key ]["fecha_creacion"].'</td>';
-	  echo '<td>'.$resp[$key ]["completado"].'</td>';
-	  echo '<td>'.$resp[$key ]["total"].'</td>';
-	  echo '<td><button id ="reportpdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button></td></tr>';
-	}
-}
-?>
-      </tbody>
- </table>                 
 
                       
 
