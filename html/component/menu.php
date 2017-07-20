@@ -59,9 +59,9 @@
                       </li>
                       <li><a> Departamento <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none;">
-                            <li class="sub_menu"><a href="?view=company&mode=add">Crear Departamento</a>
+                            <li class="sub_menu"><a href="?view=department&mode=add">Crear Departamento</a>
                             </li>
-                            <li><a href="?view=company&mode=edit">Editar Departamento</a>
+                            <li><a href="?view=department&mode=edit">Editar Departamento</a>
                             </li>
                           </ul>
                       </li>
