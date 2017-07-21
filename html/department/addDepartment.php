@@ -51,7 +51,7 @@
                   </div>
                   <div class="x_content">
                   
-                    <form class="form-horizontal form-label-left" name="formAddUnity" method="post" action="?view=unity&mode=add">
+                    <form class="form-horizontal form-label-left" name="formAddDepartment" method="post" action="?view=department&mode=add">
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Departamento:</label>
@@ -102,9 +102,17 @@
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 ">
                           <label>Personal:</label>
-                          <div class="form-inline">
-                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4 form-control" placeholder="Nombre del colaborador">
-                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4 form-control" placeholder="Email del colaborador">                      
+                          <div class="form-group">
+                            <div class="form-group col-md-4">
+                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Nombre del colaborador">
+                              
+                            </div>
+
+                            <div class="form-group col-md-5">
+                              <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4  form-control" placeholder="Email del colaborador">      
+                            </div> 
+
+                            <a id="btncreacorreos"  class="btn btn-primary" style="border-radius: 100%;"><i class="fa fa-plus"></i></a>
                             
                           </div>
                         </div>
@@ -112,8 +120,8 @@
 
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
-                            <button class="btn btn-success" alt="qer">ACEPTAR</button>
-                            <button class="btn btn-danger">CANCELAR</button>
+                            <button class="btn btn-success" >ACEPTAR</button>
+                            
                                                     
                         </div>
                       </div>
