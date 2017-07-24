@@ -32,23 +32,22 @@ class Department {
 
 	}
 
-	public function listCompany(){
-		$this->buscaEmpresa =  $this->db->real_escape_string($_POST['txtbuscarEmpresa']);
+	public function listUnity(){
 
-		$resp = false;
-		$sql = $this->db->query("SELECT * FROM tbl_empresa WHERE descripcion like '%$this->buscaEmpresa%'");
-		
-		if($this->db->rows($sql) > 0) {
-			while($data = $this->db->recorrer($sql)) {
-				$resp[$data['id_empresa']] = $data;
+			$sql = $this->db->query("SELECT b.id_unidad, concat(a.descripcion ,' - ',b.descripcion) as unidad FROM tbl_empresa a, tbl_unidad b WHERE a.activo =1 and b.activo=1 and a.id_empresa =b.fk_empresa");
+			
+			if($this->db->rows($sql) > 0) {
+				while($data = $this->db->recorrer($sql)) {
+					$resp[$data['id_unidad']] = $data;
+				}
+				//include(HTML_DIR . 'unity/addUnity.php');
 			}
-			include(HTML_DIR . 'company/editCompany.php');
-		} else {
-			$resp = false;
-			header('location: ?view=company&mode=edit');
-		}
-		$this->db->liberar($sql);  
-		return $resp;
+			else
+			{
+				$resp = false;
+				header('location: ?view=department&mode=add');
+			}
+			return $resp;
 	}
 
 	public function __destruct() {

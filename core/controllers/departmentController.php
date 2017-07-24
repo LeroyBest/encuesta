@@ -10,6 +10,7 @@
 			if($_POST) {
 		    	$depart->insertNewCompany();
 		    } else {
+		    	$resp=$depart->listUnity();
 		    	include(HTML_DIR . 'department/addDepartment.php');
 		    }
 		break;

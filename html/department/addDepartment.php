@@ -85,10 +85,11 @@
 
                               
                              if(false != $resp) {
+                              print_r($resp);
                                 foreach ($resp as $key => $value) {
                                   
                                   //echo ""$resp[$key ]['preguntas'];
-                                  echo "<option value='".$resp[$key ]["id_empresa"]."'>".$resp[$key ]["descripcion"]."</option>";
+                                  echo "<option value='".$resp[$key ]["id_unidad"]."'>".$resp[$key ]["unidad"]."</option>";
                                   
                                   
                                 }
@@ -100,20 +101,23 @@
                       </div>
                       
                       <div class="form-group">
-                        <div class="col-md-9 col-sm-9 col-xs-12 ">
-                          <label>Personal:</label>
-                          <div class="form-group">
-                            <div class="form-group col-md-4">
-                            <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Nombre del colaborador">
-                              
-                            </div>
+                        <div class="col-md-7 col-sm-9 col-xs-12 ">
+                          <div>
+                            <label>Personal:</label>
+                            
+                          </div>
+                          <div class=" col-md-12 col-sm-9 col-xs-12" style="padding-left: 0px; padding-right: 0px">
+                            
+                            <!--<input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Nombre del colaborador">-->
+                              <textarea class="form-control" rows="5" placeholder="Ingrese los correos en el siguiente formato:  juan perez,juan@correo.com; pedro gonzalez,pedro@correo.com ..."></textarea>
+                            
 
-                            <div class="form-group col-md-5">
+                           <!-- <div class="form-group col-md-5">
                               <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="col-md-4  form-control" placeholder="Email del colaborador">      
                             </div> 
 
                             <a id="btncreacorreos"  class="btn btn-primary" style="border-radius: 100%;"><i class="fa fa-plus"></i></a>
-                            
+                            -->
                           </div>
                         </div>
                       </div>
