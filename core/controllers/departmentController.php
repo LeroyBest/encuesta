@@ -8,7 +8,7 @@
 	switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
 		case 'add':
 			if($_POST) {
-		    	$depart->insertNewCompany();
+		    	$depart->insertNewDepartment();
 		    } else {
 		    	$resp=$depart->listUnity();
 		    	include(HTML_DIR . 'department/addDepartment.php');

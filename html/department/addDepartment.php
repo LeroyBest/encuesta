@@ -85,7 +85,7 @@
 
                               
                              if(false != $resp) {
-                              print_r($resp);
+                              
                                 foreach ($resp as $key => $value) {
                                   
                                   //echo ""$resp[$key ]['preguntas'];
