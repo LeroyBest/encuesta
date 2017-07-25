@@ -55,7 +55,7 @@
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Departamento:</label>
-                          <input type="text" id="txtUnidad" name="txtUnidad" class="form-control" placeholder="Nombre del Departamento">
+                          <input type="text" id="txtDepartamento" name="txtDepartamento" class="form-control" placeholder="Nombre del Departamento">
                                                     
                         </div>
                       </div>
@@ -63,21 +63,21 @@
 
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Jefe:</label>
-                          <input type="text" id="txtJefe" name="txtJefe" class="form-control" placeholder="Nombre del jefe">
+                          <input type="text" id="txtJefeDep" name="txtJefeDep" class="form-control" placeholder="Nombre del jefe">
                                                     
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Email:</label>
-                          <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Email del jefe">
+                          <input type="text" id="txtEmailJefeDep" name="txtEmailJefeDep" class="form-control" placeholder="Email del jefe">
                                                     
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Unidad:</label>
-                          <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
+                          <select class="select2_single form-control" id ="txtUnidad" name="txtUnidad">
                                 
                               
                           <option value='0'>Sin Unidad</option>
@@ -109,7 +109,7 @@
                           <div class=" col-md-12 col-sm-9 col-xs-12" style="padding-left: 0px; padding-right: 0px">
                             
                             <!--<input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Nombre del colaborador">-->
-                              <textarea class="form-control" rows="5" placeholder="Ingrese los correos en el siguiente formato:  juan perez,juan@correo.com; pedro gonzalez,pedro@correo.com ..."></textarea>
+                              <textarea class="form-control" rows="5" id="taCorreos" name="taCorreos" placeholder="Ingrese los correos en el siguiente formato:  juan perez,juan@correo.com; pedro gonzalez,pedro@correo.com ..."></textarea>
                             
 
                            <!-- <div class="form-group col-md-5">
