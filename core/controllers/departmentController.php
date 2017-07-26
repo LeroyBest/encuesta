@@ -11,9 +11,10 @@
 		case 'add':
 			if($_POST) {
 		    	$depart->insertNewDepartment();
-		    	//if(isset($_POST['taCorreos'])){
-		    //		$depart->insertColaboradores();
-		    	//}
+		    	if(!empty($_POST['taCorreos'])){
+		    		$depart->insertColaboradores();
+		    		
+		    	}
 		    } else {
 		    	$resp=$depart->listUnity();
 		    	//$cadena ="asdf,a@a.com; roberto rodriguez,roberto@a.com";

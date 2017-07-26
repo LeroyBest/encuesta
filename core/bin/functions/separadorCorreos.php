@@ -12,10 +12,13 @@ class separadorCorreos
 		//$this->caract = $cadena;
 	}
 
-	public function separar($cadena){
-		
-		$array = explode(";", $cadena);
-
+	public function separar($cadena,$delimiter){
+		if($delimiter === 0){
+			$array = explode(";", $cadena);	
+		}
+		else if($delimiter === 1){
+			$array = explode(",", $cadena);
+		}
 		return $array;
 	}
 

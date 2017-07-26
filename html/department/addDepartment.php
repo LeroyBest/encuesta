@@ -55,7 +55,7 @@
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Departamento:</label>
-                          <input type="text" id="txtDepartamento" name="txtDepartamento" class="form-control" placeholder="Nombre del Departamento">
+                          <input type="text" id="txtDepartamento" name="txtDepartamento" class="form-control" placeholder="Nombre del Departamento" required="required">
                                                     
                         </div>
                       </div>
@@ -63,14 +63,14 @@
 
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Jefe:</label>
-                          <input type="text" id="txtJefeDep" name="txtJefeDep" class="form-control" placeholder="Nombre del jefe">
+                          <input type="text" id="txtJefeDep" name="txtJefeDep" class="form-control" placeholder="Nombre del jefe" required="required">
                                                     
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Email:</label>
-                          <input type="text" id="txtEmailJefeDep" name="txtEmailJefeDep" class="form-control" placeholder="Email del jefe">
+                          <input type="text" id="txtEmailJefeDep" name="txtEmailJefeDep" class="form-control" placeholder="Email del jefe" required="required">
                                                     
                         </div>
                       </div>

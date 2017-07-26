@@ -38,14 +38,25 @@ class Department {
 	}
 
 
-	/*public function insertColaboradores() {
+	public function insertColaboradores() {
 		$this->departmentName = $this->db->real_escape_string($_POST['txtDepartamento']);
 		$this->gerente = $this->db->real_escape_string($_POST['txtJefeDep']);
 		$this->colaborador = $this->db->real_escape_string($_POST['txtEmailJefeDep']);  
 		$this->unidad = $this->db->real_escape_string($_POST['txtUnidad']); 
+		$correos = $this->db->real_escape_string($_POST['taCorreos']);
+
 		$resp = false;
-	
-		$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$this->colaborador',correo='$this->colaborador',fk_unidad='$this->unidad',es_jefe=0, activo=1");
+
+		print_r($this->separador->separar($correos,0));
+		$arrayNameMail=$this->separador->separar($correos,0);
+//print_r($arrayNameMail[0]);
+		foreach ($arrayNameMail as $value) {
+			//print_r($value);
+			$nameMailSplit	=	$this->separador->separar($value,1);
+
+			//print_r("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$nameMailSplit[0]',correo='$nameMailSplit[1]',fk_unidad='$this->unidad',es_jefe=0, activo=1");
+			$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$nameMailSplit[0]',correo='$nameMailSplit[1]',fk_unidad='$this->unidad',es_jefe=0, activo=1");
+		}
 
 		if($this->db->affected_rows>0){
         	header('location: ?view=department&mode=add&success=true');
@@ -55,7 +66,7 @@ class Department {
         }
 
 	}
-*/
+
 
 	public function listUnity(){
 
