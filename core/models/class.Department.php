@@ -5,13 +5,15 @@ class Department {
 	private $db;
 	private $departmentName;
 	private $gerente;
-	private $colaborador
+	private $colaborador;
 	private $emailGerente;
-	private $emailColaborador
+	private $emailColaborador;
 	private $unidad;
-  
+  	private $separador;
+
 	public function __construct() {
 		$this->db = new Conexion();
+		$this->separador = new separadorCorreos();
 
 	}
 	  
@@ -23,36 +25,37 @@ class Department {
 		$this->unidad = $this->db->real_escape_string($_POST['txtUnidad']); 
 		$resp = false;
 	
+
 		$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$this->gerente',correo='$this->emailGerente',fk_unidad='$this->unidad',es_jefe=1, activo=1");
 
 		if($this->db->affected_rows>0){
-        	header('location: ?view=company&mode=add&success=true');
+        	header('location: ?view=department&mode=add&success=true');
         } 
         else {
-            header('location: ?view=company&mode=add&error=true');
+            header('location: ?view=department&mode=add&error=true1');
         }
 
 	}
 
 
-	public function insertColaboradores() {
+	/*public function insertColaboradores() {
 		$this->departmentName = $this->db->real_escape_string($_POST['txtDepartamento']);
 		$this->gerente = $this->db->real_escape_string($_POST['txtJefeDep']);
 		$this->colaborador = $this->db->real_escape_string($_POST['txtEmailJefeDep']);  
 		$this->unidad = $this->db->real_escape_string($_POST['txtUnidad']); 
 		$resp = false;
 	
-		$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$this->colaborador',correo='$this->emailColaborador',fk_unidad='$this->unidad',es_jefe=0, activo=1");
+		$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$this->colaborador',correo='$this->colaborador',fk_unidad='$this->unidad',es_jefe=0, activo=1");
 
 		if($this->db->affected_rows>0){
-        	header('location: ?view=company&mode=add&success=true');
+        	header('location: ?view=department&mode=add&success=true');
         } 
         else {
-            header('location: ?view=company&mode=add&error=true');
+            header('location: ?view=department&mode=add&error=true');
         }
 
 	}
-
+*/
 
 	public function listUnity(){
 
