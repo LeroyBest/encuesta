@@ -55,7 +55,7 @@
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Unidad:</label>
-                          <input type="text" id="txtUnidad" name="txtUnidad" class="form-control" placeholder="Nombre de la Unidad">
+                          <input type="text" id="txtUnidad" name="txtUnidad" class="form-control" placeholder="Nombre de la Unidad" required="required">
                                                     
                         </div>
                       </div>
@@ -63,21 +63,21 @@
 
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Jefe:</label>
-                          <input type="text" id="txtJefe" name="txtJefe" class="form-control" placeholder="Nombre del jefe">
+                          <input type="text" id="txtJefe" name="txtJefe" class="form-control" placeholder="Nombre del jefe" required="required">
                                                     
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Email:</label>
-                          <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Email del jefe">
+                          <input type="text" id="txtEmailJefe" name="txtEmailJefe" class="form-control" placeholder="Email del jefe" required="required">
                                                     
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                           <label>Empresa:</label>
-                          <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa">
+                          <select class="select2_single form-control" id ="txtEmpresa" name="txtEmpresa" required="required">
                                 
                               
                           <option value='0'>Sin Empresa</option>
@@ -101,7 +101,7 @@
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
                             <button class="btn btn-success">ACEPTAR</button>
-                            <button class="btn btn-danger">CANCELAR</button>
+                            
                                                     
                         </div>
                       </div>

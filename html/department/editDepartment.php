@@ -1,5 +1,9 @@
 <?php include(HTML_DIR . 'component/header.php'); ?>
-
+ <link href="views/assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+ <link href="views/assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+ <link href="views/assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+ <link href="views/assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+ <link href="views/assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
   <body class="nav-sm">
     <div class="container body">
@@ -48,15 +52,28 @@
                     </form>
 
 
-                    <table class="table table-condensed table-hover dataTable no-footer" id="tblCompany">
+                    <table class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" id="tblDepartament">
                           <thead>
-                            <th>Empresa</th>
-                            <th>Gerente</th>
+                            <th>Departamento</th>
+                            <th>Colaborador</th>
                             <th>Email</th>
                             <th></th>
                           </thead>
-                          <tbody id="cuerpo">
-                                     
+                          <tbody >
+                            <?php
+
+                                //print_r($resp);
+                                if(false != $resp) {
+                                  foreach ($resp as $key => $value) {
+                                    
+                                    //echo ""$resp[$key ]['preguntas'];
+                                    echo '<tr><td><b>'.$resp[$key ]["descripcion"].'</b></td>';
+                                    echo '<td>'.$resp[$key ]["colaborador"].'</td>';
+                                    echo '<td>'.$resp[$key ]["correo"].'</td>';
+                                    echo '<td><button id ="reportpdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button></td></tr>';
+                                  }
+                               }
+                            ?>      
                           </tbody>
                     </table>                
                       
@@ -216,6 +233,20 @@
     </div>
 
     <?php include(HTML_DIR . 'component/footers.php'); ?>
+    
+    <!-- Datatables -->
+    <script src="views/assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="views/assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="views/assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
     <script src="views/app/js/editCompany.js"></script>
   </body>
 </html>

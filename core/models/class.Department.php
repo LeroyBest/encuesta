@@ -30,6 +30,7 @@ class Department {
 
 		if($this->db->affected_rows>0){
         	header('location: ?view=department&mode=add&success=true');
+        	
         } 
         else {
             header('location: ?view=department&mode=add&error=true1');
@@ -75,6 +76,24 @@ class Department {
 			if($this->db->rows($sql) > 0) {
 				while($data = $this->db->recorrer($sql)) {
 					$resp[$data['id_unidad']] = $data;
+				}
+				//include(HTML_DIR . 'unity/addUnity.php');
+			}
+			else
+			{
+				$resp = false;
+				header('location: ?view=department&mode=add');
+			}
+			return $resp;
+	}
+
+	public function listDepartment(){
+
+			$sql = $this->db->query("SELECT * FROM tbl_departamento WHERE activo=1");
+			
+			if($this->db->rows($sql) > 0) {
+				while($data = $this->db->recorrer($sql)) {
+					$resp[$data['id_departamento']] = $data;
 				}
 				//include(HTML_DIR . 'unity/addUnity.php');
 			}

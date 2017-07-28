@@ -17,6 +17,7 @@
             <div id="msg">
               
               <?php
+              
                  if(isset($_GET['success'])) {
                    echo '<div class="alert alert-dismissible alert-success">
                      <strong>Completado!</strong> se ha creado la empresa satisfactoriamente.
@@ -51,11 +52,11 @@
                   </div>
                   <div class="x_content">
                   
-                    <form class="form-horizontal form-label-left" name="formAddDepartment" method="post" action="?view=department&mode=add">
+                    <form class="form-horizontal form-label-left" name="formAddDepartment" method="post" action="?view=department&mode=add" >
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                           <label>Departamento:</label>
-                          <input type="text" id="txtDepartamento" name="txtDepartamento" class="form-control" placeholder="Nombre del Departamento" required="required">
+                          <input type="text" id="txtDepartamento" name="txtDepartamento" class="form-control" placeholder="Nombre del Departamento" data-parsley-trigger="change" required="required">
                                                     
                         </div>
                       </div>

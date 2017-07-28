@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  $('#tblDepartament').DataTable();
 
 	$('#btnBuscarCo').on('click',function(){
 

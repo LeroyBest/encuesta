@@ -10,7 +10,8 @@
 	switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
 		case 'add':
 			if($_POST) {
-		    	$depart->insertNewDepartment();
+		    	$retorna =$depart->insertNewDepartment();
+		    	//include(HTML_DIR . 'department/addDepartment.php');
 		    	if(!empty($_POST['taCorreos'])){
 		    		$depart->insertColaboradores();
 		    		
@@ -25,10 +26,12 @@
 		break;
 		case 'edit':
 			if($_POST){
-				$depart->listCompany();
+				$resp = $depart->listDepartment();
+				include(HTML_DIR . 'department/editDepartment.php');
 			}
 			else{
-			include(HTML_DIR . 'department/editDepartment.php');
+				$resp = $depart->listDepartment();
+				include(HTML_DIR . 'department/editDepartment.php');
 			}
 		break;
 		default:

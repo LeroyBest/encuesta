@@ -55,7 +55,7 @@
                      <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 rows ">
                         <label>Empresa:</label>
-                        <input type="text" id="txtCompany" name="txtCompany" class="form-control" placeholder="Nombre de la empresa">
+                        <input type="text" id="txtCompany" name="txtCompany" class="form-control" placeholder="Nombre de la empresa" required="required">
                                                   
                       </div>
                     </div>
@@ -63,14 +63,14 @@
 
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
                         <label>Gerente:</label>
-                        <input type="text" id="txtGerente" name="txtGerente" class="form-control" placeholder="Nombre del gerente">
+                        <input type="text" id="txtGerente" name="txtGerente" class="form-control" placeholder="Nombre del gerente" required="required">
                                                   
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
                         <label>Email:</label>
-                        <input type="email" id="txtEmailGerente" name="txtEmailGerente" class="form-control" placeholder="Email del gerente">
+                        <input type="email" id="txtEmailGerente" name="txtEmailGerente" class="form-control" placeholder="Email del gerente" required="required">
                                                   
                       </div>
                     </div>
