@@ -20,7 +20,7 @@
             <div class="page-title">
             <div id="msg"></div>
               <div class="title_left">
-                <h3>Empresa </h3>
+                <h3>Departamento </h3>
               </div>
 
              
@@ -32,24 +32,12 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Editar Empresa</h2>
+                    <h2>Editar Departamento</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form method="post" name="formEditCompany" action="?view=company&mode=edit">
-                      <div class="form-group">
-                        <div class="col-md-7 col-sm-9 col-xs-12 rows ">
-                          <label>Buscar:</label>
-                          <div class="input-group">
-                            <input type="text" id="txtbuscarEmpresa" name="txtbuscarEmpresa" class="form-control">
-                              <span class="input-group-btn">
-                                <input  id="btnBuscarCo" class="btn btn-primary" type="button" value="Buscar">
-                              </span>
-                          </div>                      
-                        </div>
-                      </div>
-                    </form>
+                   
 
 
                     <table class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" id="tblDepartament">
@@ -70,7 +58,7 @@
                                     echo '<tr><td><b>'.$resp[$key ]["descripcion"].'</b></td>';
                                     echo '<td>'.$resp[$key ]["colaborador"].'</td>';
                                     echo '<td>'.$resp[$key ]["correo"].'</td>';
-                                    echo '<td><button id ="reportpdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button></td></tr>';
+                                    echo '<td><a class="btn btn-danger btn-md"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
                                   }
                                }
                             ?>      
@@ -247,6 +235,6 @@
     <script src="views/assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="views/assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
     <script src="views/assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="views/app/js/editCompany.js"></script>
+    <script src="views/app/js/editDepartment.js"></script>
   </body>
 </html>
