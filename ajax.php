@@ -5,6 +5,15 @@ if($_POST){
 		case 'login':
 			require('core/bin/ajax/goLogin.php');
 		break;
+		case 'search':
+			require('core/bin/ajax/goSearch.php');
+		break;
+		case 'modify':
+			require('core/bin/ajax/goModify.php');
+		break;
+		case 'delete':
+			require('core/bin/ajax/goDelete.php');
+		break;
 		default:
 			header('location:index.php');
 		break;

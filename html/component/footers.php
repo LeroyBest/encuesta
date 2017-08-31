@@ -8,7 +8,7 @@
     <script src="views/assets/vendors/nprogress/nprogress.js"></script>
     <!-- bootstrap-progressbar -->
     <script src="views/assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    
+     
     <!-- Custom Theme Scripts -->
     <script src="views/assets/build/js/custom.min.js"></script>
 

@@ -5,7 +5,7 @@ class validaEncuestaModels{
 	
 	public function __construct()
 		    {
-		       	$this->connect    = new connectdb();
+		       	$this->connect    = new conexion();
         		
 		    }
 

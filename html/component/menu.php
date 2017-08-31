@@ -39,11 +39,39 @@
                   </li>
 
                   <li><a><i class="fa fa-cogs"></i> Administración </a>
-                    <ul class="nav child_menu">                      
-                      <!--<li><a href="?view=underconstruction"> Crear criterios </a></li>-->
-                      <!--<li><a href="?view=underconstruction"> Crear preguntas </a></li>-->
+
+                    <ul class="nav child_menu" >                      
+                      <li><a >Empresa <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none">
+                            <li class="sub_menu"><a href="?view=company&mode=add">Crear Empresa</a>
+                            </li>
+                            <li><a href="?view=company&mode=edit">Editar Empresa</a>
+                            </li>                            
+                          </ul>
+                      </li>
+                      <li><a>Unidad <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none;">
+                            <li class="sub_menu"><a href="?view=unity&mode=add">Crear Unidad</a>
+                            </li>
+                            <li><a href="?view=unity&mode=edit">Editar Unidad</a>
+                            </li>
+                          </ul>
+                      </li>
+                      <li><a> Departamento <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none;">
+                            <li class="sub_menu"><a href="?view=department&mode=add">Crear Departamento</a>
+                            </li>
+                            <li><a href="?view=department&mode=edit">Editar Departamento</a>
+                            </li>
+                          </ul>
+                      </li>
+                      <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>-->
                       <li><a href="?view=send"> Enviar encuesta </a></li>
-                    </ul>
+                    <!--<ul class="nav child_menu">                      
+
+                      <li><a href="?view=send"> Enviar encuesta </a></li>
+
+                    </ul>-->
                   </li>                     
                   
                   
