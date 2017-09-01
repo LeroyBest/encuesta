@@ -56,7 +56,7 @@ if(false != $resp) {
 		
 	  //echo ""$resp[$key ]['preguntas'];
 	  echo '<tr><td><b>'.$resp[$key ]["titulo"].'</b></td>';
-	  echo '<td>'.$resp[$key ]["unidad"].'</td>';
+	  echo '<td>'.$resp[$key ]["departamento"].'</td>';
 	  echo '<td>'.$resp[$key ]["fecha_creacion"].'</td>';
 	  echo '<td>'.$resp[$key ]["completado"].'</td>';
 	  echo '<td>'.$resp[$key ]["total"].'</td>';

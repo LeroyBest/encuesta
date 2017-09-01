@@ -20,5 +20,6 @@
     <!-- Custom Theme Style -->
     <link href="views/assets/build/css/custom.min.css" rel="stylesheet">
     <link href="views/css/progress/progresion.css" rel="stylesheet">
-     <link href="views/css/varios.css" rel="stylesheet">
+    <link href="views/app/css/encuesta.css" rel="stylesheet">
+
   </head>
