@@ -30,6 +30,7 @@
                     <ul class="nav child_menu">
                       <li><a href="?view=result&mode=question"> Por preguntas </a></li>
                       <li><a href="?view=result&mode=criterio"> Por criterio </a></li>
+                      <li><a href="?view=result&mode=criterio"> Reporte </a></li>
 					  
 					  <!--<li><a href="?view=reporteDep"> Por Departamento </a></li>
                       <li><a href="?view=result&mode=criterio"> Por Unidad </a></li>
