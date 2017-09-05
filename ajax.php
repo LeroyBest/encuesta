@@ -14,6 +14,9 @@ if($_POST){
 		case 'delete':
 			require('core/bin/ajax/goDelete.php');
 		break;
+		case 'reporte':
+			require('core/bin/ajax/goReportes.php');
+		break;
 		default:
 			header('location:index.php');
 		break;
