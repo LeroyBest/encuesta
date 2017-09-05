@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$("#tipo").change(function(){
 		//alert('correcto');
-
+var seleccionado =$("#tipo").val(); 
 		 	var connect, form, response, result;
 
 	    	form = $( "#reportesForm").serialize()+ "&seccion="+$("#tipo").val();
@@ -14,8 +14,16 @@ $(document).ready(function(){
 		        	$("#nombre").empty();
 		        	$.each( datos, function( key, value ) {
 		       		
-			  			//console.log(value.descripcion + value.colaborador + value.correo );
+			  			if(seleccionado =="Empresa"){
+
 			  			$("#nombre").append("<option>"+value.descripcion+"</option>");
+			  			}
+			  			else if (seleccionado =="Unidad"){
+			  				$("#nombre").append("<option>"+value.empresa+" - "+value.descripcion+"</option>");
+			  			}
+			  			else if(seleccionado =="Departamento"){
+			  				$("#nombre").append("<option>"+value.empresa+" - "+value.unidad+" - "+value.descripcion+"</option>");
+			  			}
 					
 					});
 			    }

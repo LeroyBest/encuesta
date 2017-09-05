@@ -34,16 +34,16 @@
                   <div class="x_content">
                     <form class="form-horizontal form-label-left input_mask" id="reportesForm">
                       <div class="rows">
-                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
                           <select type="text" name="tipo" class="form-control has-feedback-left" id="tipo">
                             <option>-Escojer una opcion-</option>
-                            <option>Empresa</option>
-                            <option>Unidad</option>
-                            <option>Departamento</option>
+                            <option >Empresa</option>
+                            <option >Unidad</option>
+                            <option >Departamento</option>
                           </select>
                         </div>
 
-                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
                           <select id ="nombre" name ="nombre" class="form-control has-feedback-left"  >
 
                            
@@ -53,7 +53,7 @@
                         
                       </div>
 
-                      <div class="col-md-12">
+                      <div class="col-md-4">
                         <button>Generar Informe</button>
                       </div>
                     </form>
