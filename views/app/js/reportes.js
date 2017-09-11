@@ -16,13 +16,13 @@ var seleccionado =$("#tipo").val();
 		       		
 			  			if(seleccionado =="Empresa"){
 
-			  			$("#nombre").append("<option>"+value.descripcion+"</option>");
+			  			$("#nombre").append("<option value ='"+value.id_empresa+"'>"+value.descripcion+"</option>");
 			  			}
 			  			else if (seleccionado =="Unidad"){
-			  				$("#nombre").append("<option>"+value.empresa+" - "+value.descripcion+"</option>");
+			  				$("#nombre").append("<option value ='"+value.id_unidad+"'>"+value.empresa+" - "+value.descripcion+"</option>");
 			  			}
 			  			else if(seleccionado =="Departamento"){
-			  				$("#nombre").append("<option>"+value.empresa+" - "+value.unidad+" - "+value.descripcion+"</option>");
+			  				$("#nombre").append("<option value ='"+value.id_departamento+"'>"+value.empresa+" - "+value.unidad+" - "+value.descripcion+"</option>");
 			  			}
 					
 					});
