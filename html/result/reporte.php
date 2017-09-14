@@ -54,7 +54,7 @@
                       </div>
 
                       <div class="col-md-4">
-                        <button>Generar Informe</button>
+                        <input type="button" id="btnGeneraReporte" value ="Generar Informe">
                       </div>
                     </form>
 

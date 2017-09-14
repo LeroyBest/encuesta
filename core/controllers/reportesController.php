@@ -5,7 +5,7 @@
 	$home  = new Home();
 
 		switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
-			case 'question':
+			case 'search':
 				$resp=$result->promedioXpreguntas();
 				include(HTML_DIR . 'result/question.php');
 			break;
