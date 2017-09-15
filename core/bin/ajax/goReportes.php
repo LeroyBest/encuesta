@@ -9,48 +9,65 @@
 	switch (isset($_POST['seccion']) ? $_POST['seccion'] : null) {
 		case 'Empresa':
 			
-			
-			$sql = $db->query("SELECT * FROM tbl_empresa WHERE activo =1");
-				
-				if($db->rows($sql) > 0) {
-					while($data = $db->recorrer($sql)) {
-						$HTML[$data['id_empresa']] = $data;
+			if(isset($_POST['generar'])){
+					$HTML = false;
+			}else{
+
+				$sql = $db->query("SELECT * FROM tbl_empresa WHERE activo =1");
+					
+					if($db->rows($sql) > 0) {
+						while($data = $db->recorrer($sql)) {
+							$HTML[$data['id_empresa']] = $data;
+						}
+					
 					}
-				
-				}
-				$db->liberar($sql); 
-				$db->close(); 
+					$db->liberar($sql); 
+					$db->close(); 
+					
+			}
 			
 		break;
 		case 'Unidad':
 						
-				//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
-				$sql = $db->query("SELECT *,(select descripcion from tbl_empresa where id_empresa = a.fk_empresa) as empresa
-									FROM tbl_unidad a WHERE  a.activo =1 ");
-				
-				if($db->rows($sql) > 0) {
-					while($data = $db->recorrer($sql)) {
-						$HTML[$data['id_unidad']] = $data;
+				if(isset($_POST['generar'])){
+					$HTML = false;
+				}else{
+
+					//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
+					$sql = $db->query("SELECT *,(select descripcion from tbl_empresa where id_empresa = a.fk_empresa) as empresa
+										FROM tbl_unidad a WHERE  a.activo =1 ");
+					
+					if($db->rows($sql) > 0) {
+						while($data = $db->recorrer($sql)) {
+							$HTML[$data['id_unidad']] = $data;
+						}
+					
 					}
-				
+					$db->liberar($sql); 
+					$db->close(); 
+					
 				}
-				$db->liberar($sql); 
-				$db->close(); 
 			
 		break;
 		case 'Departamento':
 						
-				//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
-				$sql = $db->query("SELECT distinct id_departamento,dep.descripcion,fk_unidad,a.descripcion as unidad,a.fk_empresa,(select descripcion from tbl_empresa where id_empresa = a.fk_empresa) as empresa FROM tbl_departamento dep, tbl_unidad a WHERE dep.fk_unidad = a.id_unidad and dep.activo =1");
-				
-				if($db->rows($sql) > 0) {
-					while($data = $db->recorrer($sql)) {
-						$HTML[$data['id_departamento']] = $data;
+				if(isset($_POST['generar'])){
+					$HTML = false;
+				}else{
+
+					//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
+					$sql = $db->query("SELECT distinct id_departamento,dep.descripcion,fk_unidad,a.descripcion as unidad,a.fk_empresa,(select descripcion from tbl_empresa where id_empresa = a.fk_empresa) as empresa FROM tbl_departamento dep, tbl_unidad a WHERE dep.fk_unidad = a.id_unidad and dep.activo =1");
+					
+					if($db->rows($sql) > 0) {
+						while($data = $db->recorrer($sql)) {
+							$HTML[$data['id_departamento']] = $data;
+						}
+					
 					}
-				
-				}
-				$db->liberar($sql); 
-				$db->close(); 
+					$db->liberar($sql); 
+					$db->close(); 
+					
+				}	
 			
 		break;
 

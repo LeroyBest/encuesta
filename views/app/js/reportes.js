@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 		 	var connect, form, response, result;
 
-	    	form = $( "#reportesForm").serialize()+ "&seccion="+$("#tipo").val();
+	    	form = $( "#reportesForm").serialize()+ "&seccion="+$("#tipo").val()+"&generar=true";
 	    	connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 	    	connect.onreadystatechange = function() {
 		        if(connect.readyState == 4 && connect.status == 200) {
@@ -49,20 +49,7 @@ $(document).ready(function(){
 		        	var datos = JSON.parse(connect.responseText);
 		        	console.log(datos);
 		        	$("#nombre").empty();
-		        	$.each( datos, function( key, value ) {
-		       		
-			  			if(seleccionado =="Empresa"){
-
-			  			$("#nombre").append("<option value ='"+value.id_empresa+"'>"+value.descripcion+"</option>");
-			  			}
-			  			else if (seleccionado =="Unidad"){
-			  				$("#nombre").append("<option value ='"+value.id_unidad+"'>"+value.empresa+" - "+value.descripcion+"</option>");
-			  			}
-			  			else if(seleccionado =="Departamento"){
-			  				$("#nombre").append("<option value ='"+value.id_departamento+"'>"+value.empresa+" - "+value.unidad+" - "+value.descripcion+"</option>");
-			  			}
-					
-					});
+		        	
 			    }
 			}
 
