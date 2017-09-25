@@ -49,6 +49,9 @@ $(document).ready(function(){
 		        	var datos = JSON.parse(connect.responseText);
 		        	console.log(datos);
 		        	$("#nombre").empty();
+		        	$('#viewReport').empty();
+
+		        	$('#viewReport').append("reporte de "+ $("#tipo").val());
 		        	
 			    }
 			}

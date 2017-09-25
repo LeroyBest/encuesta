@@ -54,11 +54,11 @@
                       </div>
 
                       <div class="col-md-4">
-                        <input type="button" id="btnGeneraReporte" value ="Generar Informe">
+                        <input type="button" class="btn btn-primary" id="btnGeneraReporte" value ="Generar Informe">
                       </div>
                     </form>
 
-                      
+                      <div id="viewReport"></div>
 
                       
                       
