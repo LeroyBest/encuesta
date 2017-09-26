@@ -5,6 +5,8 @@
 		
 		$buscaEmpresa = (isset($_POST['txtbuscarEmpresa']) ? $_POST['txtbuscarEmpresa'] : null);
 		$buscaUnidad =(isset($_POST['txtbuscarUnidad']) ? $_POST['txtbuscarUnidad'] : null);
+		$departamento =(isset($_POST['nombre']) ? $_POST['nombre'] : null);
+		
 
 	switch (isset($_POST['seccion']) ? $_POST['seccion'] : null) {
 		case 'Empresa':
@@ -53,7 +55,7 @@
 						
 				if(isset($_POST['generar'])){
 					$HTML = false;
-					$sql = $db->query("SELECT  count(distinct valida.cadena) cantidad, sum(valores_estudio) sumaValores FROM tbl_estudio estudio, tbl_departamento dep, tbl_encuesta_valida valida WHERE estudio.cliente = valida.cadena and dep.id_departamento = valida.departamento");
+					$sql = $db->query("SELECT  count(distinct valida.cadena) cantidad, sum(valores_estudio) sumaValores FROM tbl_estudio estudio, tbl_encuesta_valida valida WHERE estudio.cliente = valida.cadena  and valida.departamento = $departamento");
 
 					if($db->rows($sql) > 0) {
 						while($data = $db->recorrer($sql)) {
