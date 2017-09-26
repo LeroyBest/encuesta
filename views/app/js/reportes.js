@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 	$("#btnGeneraReporte").on('click',function(){
 
-		alert($("#tipo").val() +" "+ $("#nombre").val()+" "+ $( "#reportesForm").serialize());
+		//alert($("#tipo").val() +" "+ $("#nombre").val()+" "+ $( "#reportesForm").serialize());
 
 		 	var connect, form, response, result;
 
