@@ -59,10 +59,15 @@
 
 					if($db->rows($sql) > 0) {
 						while($data = $db->recorrer($sql)) {
-							$HTML[$data['cantidad']] = $data;
+							$HTML[] = $data;
 						}
 					
 					}
+					
+					//print_r($HTML[0]['cantidad']);
+					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
+						echo"asdfg";
+					}else{$HTML=false;}
 				}else{
 
 					//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
