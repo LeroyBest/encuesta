@@ -1,6 +1,6 @@
 <?php
 
-class Survey {
+class Evaluation {
 	
 	
 	
@@ -8,14 +8,14 @@ class Survey {
 		$this->db = new Conexion();
 	}
 	  
-	public function evaluacion($a,$b){
+	public function evalResult($resultadoEval){
 			
 		$resp = false;
-		$encuesta=$this->cifrado->decodeBase64($this->sn);
-		$sql = $this->db->query("SELECT id_pregunta,fk_criterio,pregunta,encuesta FROM tbl_preguntas where  encuesta =$encuesta limit $a,$b");
+		//echo "SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = $resultadoEval";
+		$sql = $this->db->query("SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = 1");
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
-				$resp[$data['id_pregunta']] = $data;
+				$resp[$data['id_resultado']] = $data;
 			}
 		} else {
 			$resp = false;

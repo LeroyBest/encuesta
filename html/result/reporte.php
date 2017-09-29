@@ -58,7 +58,10 @@
                       </div>
                     </form>
 
-                      <div id="viewReport"></div>
+                      <div id="viewReport">
+                        
+
+                      </div>
 
                       
                       
