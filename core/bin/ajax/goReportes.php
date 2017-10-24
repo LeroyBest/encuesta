@@ -68,14 +68,14 @@
 					
 					}
 					
-					//print_r($HTML[0]['cantidad']);
+					$criterioProm = $evaluacion->promedioCriterio($departamento);
+
+					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
 						
 						$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
-						//echo floor($total);
-						//print_r($evaluacion->evalResult(floor($total)));
 						$HTML[] =$evaluacion->evalResult(floor($total));
-						//print_r($HTML);
+						
 					}else{$HTML=false;}
 				}else{
 
