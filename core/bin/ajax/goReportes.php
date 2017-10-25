@@ -69,7 +69,7 @@
 					}
 					
 					$criterioProm = $evaluacion->promedioCriterio($departamento);
-
+print_r($criterioProm);
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
 						
