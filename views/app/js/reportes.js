@@ -47,12 +47,12 @@ $(document).ready(function(){
 		        if(connect.readyState == 4 && connect.status == 200) {
 		        	console.log($("#tipo").val());
 		        	var datos = JSON.parse(connect.responseText);
-		        	console.log(datos[1][1].primer_resultado);
+		        	console.log(datos);
 		        	//$("#nombre").empty();
 		        	$('#viewReport').empty();
 
 		        	$('#viewReport').append("reporte de "+ $("#tipo").val());
-		        	$('#viewReport').html(datos[1][1].primer_resultado+datos[1][1].segundo_resultado+ datos[1][1].tercer_resultado+ datos[1][1].cuarto_resultado);
+		        	$('#viewReport').html(datos[1][1].primer_resultado+datos[1][1].segundo_resultado+ datos[1][1].cuarto_resultado);
 		        	
 			    }
 			}

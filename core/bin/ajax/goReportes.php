@@ -6,8 +6,9 @@
 		
 	$evaluacion  = new Evaluation();		
 	$buscaEmpresa = (isset($_POST['txtbuscarEmpresa']) ? $_POST['txtbuscarEmpresa'] : null);
-		$buscaUnidad =(isset($_POST['txtbuscarUnidad']) ? $_POST['txtbuscarUnidad'] : null);
-		$departamento =(isset($_POST['nombre']) ? $_POST['nombre'] : null);	
+	$buscaUnidad =(isset($_POST['txtbuscarUnidad']) ? $_POST['txtbuscarUnidad'] : null);
+	$departamento =(isset($_POST['nombre']) ? $_POST['nombre'] : null);	
+	$criterio =array();
 		
 
 	switch (isset($_POST['seccion']) ? $_POST['seccion'] : null) {
@@ -68,13 +69,103 @@
 					
 					}
 					
-					$criterioProm = $evaluacion->promedioCriterio($departamento);
-print_r($criterioProm);
+					
+
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
-						
+						$criterioProm = $evaluacion->promedioCriterio($departamento);
 						$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
+
+						switch (floor($total)) {
+							case 1:
+									foreach ($criterioProm as $key => $value) {
+										if($criterioProm[$key]['promedio']< 2){
+											$criterio[] = $criterioProm[$key]['criterio'];
+										}
+									}
+
+								break;
+
+							case 2:
+									foreach ($criterioProm as $key => $value) {
+										if($criterioProm[$key]['promedio']< 3){
+											$criterio[] = $criterioProm[$key]['criterio'];
+											//print_r($criterio);
+										}
+									}	
+
+								break;
+
+							case 3:
+
+									foreach ($criterioProm as $key => $value) {
+										if($criterioProm[$key]['promedio']< 3){
+											$criterio[] = $criterioProm[$key]['criterio'];
+											//print_r($criterio);
+										}
+									}
+								
+								break;
+
+							case 4:
+								
+									foreach ($criterioProm as $key => $value) {
+										if($criterioProm[$key]['promedio']< 3){
+											$criterio[] = $criterioProm[$key]['criterio'];
+											//print_r($criterio);
+										}
+									}
+
+								break;
+
+							case 5:
+
+									foreach ($criterioProm as $key => $value) {
+										if($criterioProm[$key]['promedio']< 3){
+											$criterio[] = $criterioProm[$key]['criterio'];
+										}
+									}
+								
+								break;
+							
+							default:
+								# code...
+								break;
+						}
+
+
+						$preguntasBajas = $evaluacion->criteriosBajos($criterio);
+						print_r($preguntasBajas);
+						$idCriterio = 0;
+						$vineta =0;
+						$tercer_resultado = "";
+
+
+						foreach ($preguntasBajas as $key => $value) {
+							//$tercer_resultado= $preguntasBajas[$key]['descripcion'];
+
+							if($idCriterio == $preguntasBajas[$key]['id_criterio']){
+								$vineta +=1;
+								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta'];
+							}
+							else{
+								$vineta=0;
+								$vineta +=1;
+								$idCriterio = $preguntasBajas[$key]['id_criterio'];
+								$tercer_resultado=$preguntasBajas[$key]['id_criterio'].") ".$preguntasBajas[$key]['descripcion'];
+								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta'];
+
+							}
+						}
+
+echo "tercer_resultado ".$tercer_resultado;
+
 						$HTML[] =$evaluacion->evalResult(floor($total));
+						$HTML[] = array("pregunta" => $tercer_resultado);
+
+
+						//print_r($HTML[2]['pregunta'][1]);
+
 						
 					}else{$HTML=false;}
 				}else{

@@ -2,7 +2,7 @@
 
 class Evaluation {
 	
-	
+	private $db;
 	
 	public function __construct() {
 		$this->db = new Conexion();
@@ -25,20 +25,47 @@ class Evaluation {
 
 	}
 
-		public function promedioCriterio($departamento){
+	public function promedioCriterio($departamento){
 		    $resp =array();  
-			$sql = "SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento =$departamento) group by fk_criterio";
+			$sql = $this->db->query("SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento ='$departamento') group by fk_criterio");
 
 				if ($this->db->rows($sql) > 0) {
 				    // output data of each row
 				    while($data = $this->db->recorrer($sql)) {
-				        //$resp[] = array("criterio" => $row["criterio"], "promedio" => $row["promedio"]);
-				    					$resp[$data['criterio']] = $data;
+				        $resp[] = array("criterio" => $data["criterio"], "promedio" => $data["promedio"]);
+				    					
 				    }
-				} else {
-				    $resp ="SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento =$departamento) group by fk_criterio";
+				} 
+				else {
+				    $resp =false;
 				}
-				return $resp;
+			
+			return $resp;
+				
+	}
+
+
+	public function criteriosBajos($criterios){
+		    $resp =array();  
+
+		    foreach ($criterios as $key => $value) {
+				$sql = $this->db->query("SELECT id_criterio,descripcion,pregunta FROM tbl_preguntas,tbl_criterios WHERE fk_criterio in ($criterios[$key]) and id_criterio = fk_criterio");
+				//echo "SELECT pregunta FROM tbl_preguntas WHERE fk_criterio in ($criterios[$key])";
+					if ($this->db->rows($sql) > 0) {
+					    // output data of each row
+					    while($data = $this->db->recorrer($sql)) {
+					        $resp[] = array("id_criterio" => $data["id_criterio"],"descripcion" => $data["descripcion"],"pregunta" => $data["pregunta"]);
+					    					
+					    }
+					} 
+					else {
+					    $resp =false;
+					}
+		    }
+
+
+			
+			return $resp;
 				
 	}
 
