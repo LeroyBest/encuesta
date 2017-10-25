@@ -33,7 +33,7 @@ class Evaluation {
 				    // output data of each row
 				    while($data = $this->db->recorrer($sql)) {
 				        //$resp[] = array("criterio" => $row["criterio"], "promedio" => $row["promedio"]);
-				    					$resp[] = $data;
+				    					$resp[$data['criterio']] = $data;
 				    }
 				} else {
 				    $resp ="SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento =$departamento) group by fk_criterio";
