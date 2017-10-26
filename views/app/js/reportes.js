@@ -52,7 +52,7 @@ $(document).ready(function(){
 		        	$('#viewReport').empty();
 
 		        	$('#viewReport').append("reporte de "+ $("#tipo").val());
-		        	$('#viewReport').html(datos[1][1].primer_resultado+datos[1][1].segundo_resultado+ datos[1][1].cuarto_resultado);
+		        	$('#viewReport').html(datos[1][1].primer_resultado+datos[1][1].segundo_resultado+ datos[2]['pregunta'] +datos[1][1].cuarto_resultado);
 		        	
 			    }
 			}

@@ -135,10 +135,11 @@
 
 
 						$preguntasBajas = $evaluacion->criteriosBajos($criterio);
-						print_r($preguntasBajas);
+						//print_r($preguntasBajas);
 						$idCriterio = 0;
 						$vineta =0;
-						$tercer_resultado = "";
+						$tercer_resultado = "<p><strong><u>TERCER RESULTADO:</u></strong></p><p>Las &Aacute;reas&nbsp; y criterios que, en el caso de su Unidad administrativa, requieren de urgente atenci&oacute;n y mejora son los siguientes:</p>
+							<p>&nbsp;</p>";
 
 
 						foreach ($preguntasBajas as $key => $value) {
@@ -152,13 +153,13 @@
 								$vineta=0;
 								$vineta +=1;
 								$idCriterio = $preguntasBajas[$key]['id_criterio'];
-								$tercer_resultado=$preguntasBajas[$key]['id_criterio'].") ".$preguntasBajas[$key]['descripcion'];
-								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta'];
+								$tercer_resultado=$tercer_resultado."<strong>".$preguntasBajas[$key]['id_criterio'].") ".$preguntasBajas[$key]['descripcion']."</strong><p>&nbsp;</p>";
+								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta']."<p>&nbsp;</p>";
 
 							}
 						}
-
-echo "tercer_resultado ".$tercer_resultado;
+						$tercer_resultado = $tercer_resultado."<p>&nbsp;</p><p>&nbsp;</p>";
+//echo "tercer_resultado ".$tercer_resultado;
 
 						$HTML[] =$evaluacion->evalResult(floor($total));
 						$HTML[] = array("pregunta" => $tercer_resultado);
