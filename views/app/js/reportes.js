@@ -48,11 +48,12 @@ $(document).ready(function(){
 		        	console.log($("#tipo").val());
 		        	var datos = JSON.parse(connect.responseText);
 		        	console.log(datos);
+		        	$promedio = datos[0]['cantidad'];
 		        	//$("#nombre").empty();
 		        	$('#viewReport').empty();
 
 		        	$('#viewReport').append("reporte de "+ $("#tipo").val());
-		        	$('#viewReport').html(datos[1][1].primer_resultado+datos[1][1].segundo_resultado+ datos[2]['pregunta'] +datos[1][1].cuarto_resultado);
+		        	$('#viewReport').html(datos[1][$promedio].primer_resultado+datos[1][$promedio].segundo_resultado+ datos[2]['pregunta'] +datos[1][$promedio].cuarto_resultado);
 		        	
 			    }
 			}

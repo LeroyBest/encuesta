@@ -62,6 +62,8 @@
                           <ul class="nav child_menu" style="display: none;">
                             <li class="sub_menu"><a href="?view=department&mode=add">Crear Departamento</a>
                             </li>
+                            <li><a href="?view=department&mode=in">Inscribir Colaboradores</a>
+                            </li>
                             <li><a href="?view=department&mode=edit">Editar Departamento</a>
                             </li>
                           </ul>

@@ -12,7 +12,7 @@ class Evaluation {
 			
 		$resp = false;
 		//echo "SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = $resultadoEval";
-		$sql = $this->db->query("SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = 1");
+		$sql = $this->db->query("SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = $resultadoEval");
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
 				$resp[$data['id_resultado']] = $data;

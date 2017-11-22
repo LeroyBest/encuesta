@@ -12,15 +12,13 @@
 			if($_POST) {
 		    	$retorna =$depart->insertNewDepartment();
 		    	//include(HTML_DIR . 'department/addDepartment.php');
-		    	if(!empty($_POST['taCorreos'])){
+		    	/*if(!empty($_POST['taCorreos'])){
 		    		$depart->insertColaboradores();
 		    		
-		    	}
+		    	}*/
 		    } else {
 		    	$resp=$depart->listUnity();
-		    	//$cadena ="asdf,a@a.com; roberto rodriguez,roberto@a.com";
-		    	//$as =$separador->separar($cadena);
-//print_r($as);
+		    	
 		    	include(HTML_DIR . 'department/addDepartment.php');
 		    }
 		break;
@@ -34,6 +32,17 @@
 				include(HTML_DIR . 'department/editDepartment.php');
 			}
 		break;
+		case 'in':
+			if($_POST){
+				$depart->insertColaboradores();;
+				include(HTML_DIR . 'department/inscribirColaboradores.php');
+			}
+			else{
+				$resp = $depart->listCompUnitDepartment();
+				include(HTML_DIR . 'department/inscribirColaboradores.php');
+			}
+		break;
+
 		default:
 		    include(HTML_DIR . 'department/addDepartment.php');
 		break;

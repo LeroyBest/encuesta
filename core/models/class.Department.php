@@ -40,10 +40,8 @@ class Department {
 
 
 	public function insertColaboradores() {
-		$this->departmentName = $this->db->real_escape_string($_POST['txtDepartamento']);
-		$this->gerente = $this->db->real_escape_string($_POST['txtJefeDep']);
-		$this->colaborador = $this->db->real_escape_string($_POST['txtEmailJefeDep']);  
-		$this->unidad = $this->db->real_escape_string($_POST['txtUnidad']); 
+		
+		$this->departamento = $this->db->real_escape_string($_POST['txtDepartamento']); 
 		$correos = $this->db->real_escape_string($_POST['taCorreos']);
 
 		$resp = false;
@@ -56,14 +54,14 @@ class Department {
 			$nameMailSplit	=	$this->separador->separar($value,1);
 
 			//print_r("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$nameMailSplit[0]',correo='$nameMailSplit[1]',fk_unidad='$this->unidad',es_jefe=0, activo=1");
-			$this->db->query("INSERT INTO tbl_departamento SET descripcion='$this->departmentName',colaborador='$nameMailSplit[0]',correo='$nameMailSplit[1]',fk_unidad='$this->unidad',es_jefe=0, activo=1");
+			$this->db->query("INSERT INTO tbl_empleados SET fk_departamento='$this->departamento',colaborador='$nameMailSplit[0]',correo='$nameMailSplit[1]', activo=1");
 		}
 
 		if($this->db->affected_rows>0){
-        	header('location: ?view=department&mode=add&success=true');
+        	header('location: ?view=department&mode=in&success=true');
         } 
         else {
-            header('location: ?view=department&mode=add&error=true');
+            header('location: ?view=department&mode=in&error=true');
         }
 
 	}
@@ -105,6 +103,23 @@ class Department {
 			return $resp;
 	}
 
+	public function listCompUnitDepartment(){
+
+			$sql = $this->db->query("SELECT distinct id_departamento,dep.descripcion,fk_unidad,a.descripcion as unidad,a.fk_empresa,(select descripcion from tbl_empresa where id_empresa = a.fk_empresa) as empresa FROM tbl_departamento dep, tbl_unidad a WHERE dep.fk_unidad = a.id_unidad and dep.activo =1");
+			
+			if($this->db->rows($sql) > 0) {
+				while($data = $this->db->recorrer($sql)) {
+					$resp[$data['id_departamento']] = $data;
+				}
+				//include(HTML_DIR . 'unity/addUnity.php');
+			}
+			else
+			{
+				$resp = false;
+				header('location: ?view=department&mode=add');
+			}
+			return $resp;
+	}
 	public function __destruct() {
 		$this->db->close();
 	}
