@@ -1,7 +1,7 @@
 <?php include(HTML_DIR . 'component/header.php'); ?>
 
 
-  <body class="nav-sm">
+  <body class="nav-md">
     <div class="container body">
       <div class="main_container">
 

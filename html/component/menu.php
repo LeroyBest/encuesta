@@ -69,7 +69,14 @@
                           </ul>
                       </li>
                       <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>-->
-                      <li><a href="?view=send"> Enviar encuesta </a></li>
+                      <li><a> Enviar encuesta <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" style="display: none">
+                            <li class="sub_menu"><a href="?view=send">Unitaria</a>
+                            </li>
+                            <li><a href="#">Corporativa</a>
+                            </li>                            
+                          </ul>
+                      </li>
                     <!--<ul class="nav child_menu">                      
 
                       <li><a href="?view=send"> Enviar encuesta </a></li>
