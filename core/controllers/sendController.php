@@ -14,6 +14,21 @@ if(isset($_SESSION['user'])) {
         include(HTML_DIR . 'send/sendsurvey.php');
       }
     break;
+    case 'ind':
+      if($_POST) {
+        $send->EnviarEncuesta();
+      } else {
+        include(HTML_DIR . 'send/sendsurvey.php');
+      }
+    break;
+    case 'corp':
+      if($_POST) {
+        $send->EnviarEncuesta();
+      } else {
+        include(HTML_DIR . 'send/sendsurveycorporative.php');
+      }
+    break;
+
     default:
       include(HTML_DIR . 'send/sendsurvey.php');
     break;

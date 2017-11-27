@@ -46,7 +46,7 @@
                           <ul class="nav child_menu" style="display: none">
                             <li class="sub_menu"><a href="?view=company&mode=add">Crear Empresa</a>
                             </li>
-                            <li><a href="?view=company&mode=edit">Editar Empresa</a>
+                            <li class="sub_menu"><a href="?view=company&mode=edit">Editar Empresa</a>
                             </li>                            
                           </ul>
                       </li>
@@ -71,9 +71,9 @@
                       <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>-->
                       <li><a> Enviar encuesta <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none">
-                            <li class="sub_menu"><a href="?view=send">Unitaria</a>
+                            <li class="sub_menu"><a href="?view=send&mode=ind">Unitaria</a>
                             </li>
-                            <li><a href="#">Corporativa</a>
+                            <li class="sub_menu"><a href="?view=send&mode=corp">Corporativa</a>
                             </li>                            
                           </ul>
                       </li>
