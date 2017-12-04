@@ -23,6 +23,12 @@ if(isset($_SESSION['user'])) {
     break;
     case 'corp':
       if($_POST) {
+        /*SELECT employees.colaborador,employees.correo 
+          FROM tbl_empleados employees,tbl_departamento dep, tbl_unidad uni, tbl_empresa emp
+          WHERE emp.id_empresa = uni.fk_empresa 
+          and uni.id_unidad = dep.fk_unidad
+          and dep.id_departamento = employees.fk_departamento
+        */
         $send->EnviarEncuesta();
       } else {
         include(HTML_DIR . 'send/sendsurveycorporative.php');

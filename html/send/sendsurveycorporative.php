@@ -113,6 +113,6 @@
 
     <?php include(HTML_DIR . 'component/footers.php'); ?>
      
-      <script src="views/app/js/creatextbox.js"></script>
+    <script src="views/app/js/reportes.js"></script>
   </body>
 </html>
