@@ -15,7 +15,7 @@
             <div class="page-title">
             <div id="msg"></div>
               <div class="title_left">
-                <h3>Reportes </h3>
+                <h3>Resultados</h3>
               </div>
 
              
@@ -27,14 +27,14 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Preguntas</h2>
+                    <h2> Reporte </h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <form class="form-horizontal form-label-left input_mask" id="reportesForm">
                       <div class="rows">
-                        <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
                           <select type="text" name="tipo" class="form-control has-feedback-left" id="tipo">
                             <option>-Escojer una opcion-</option>
                             <option >Empresa</option>
@@ -43,7 +43,7 @@
                           </select>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback">
                           <select id ="nombre" name ="nombre" class="form-control has-feedback-left"  >
 
                            
@@ -53,8 +53,8 @@
                         
                       </div>
 
-                      <div class="col-md-4">
-                        <input type="button" class="btn btn-primary" id="btnGeneraReporte" value ="Generar Informe">
+                      <div class="col-md-12">
+                        <input type="button" class="btn btn-primary pull-right" id="btnGeneraReporte" value ="Generar Informe">
                       </div>
                     </form>
 

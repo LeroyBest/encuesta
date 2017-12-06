@@ -16,7 +16,7 @@
             <div class="page-title">
             <div id="msg"></div>
               <div class="title_left">
-                <h3>Home </h3>
+                <h3>Mis Encuestas</h3>
               </div>
 
              
@@ -27,11 +27,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Mis Encuestas</h2>
-                    
-                    <div class="clearfix"></div>
-                  </div>
+
                   <div class="x_content">
                   
 

@@ -20,19 +20,19 @@
             <div class="page-title">
             <div id="msg"></div>
               <div class="title_left">
-                <h3>Departamento </h3>
+                <h3>Administración - Departamento </h3>
               </div>
 
              
             </div>
             
-            <div class="clearfix"></div>
+            <div class="clearfix"  style="height: 61px;" ></div>
 
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Editar Departamento</h2>
+                    <h2>Lista Departamento</h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -44,7 +44,7 @@
                           <thead>
                             <th>Departamento</th>
                             <th>Colaborador</th>
-                            <th>Email</th>
+                            <th>Correo Electronico</th>
                             <th></th>
                           </thead>
                           <tbody >
@@ -58,7 +58,7 @@
                                     echo '<tr><td><b>'.$resp[$key ]["descripcion"].'</b></td>';
                                     echo '<td>'.$resp[$key ]["colaborador"].'</td>';
                                     echo '<td>'.$resp[$key ]["correo"].'</td>';
-                                    echo '<td><a class="btn btn-danger btn-md"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
+                                    echo '<td><a class="btn btn-danger btn-md" title="Borrar"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
                                   }
                                }
                             ?>      
@@ -85,7 +85,7 @@
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Editar Empresa</h4>
+                                <h4 class="modal-title">Editar Departamento</h4>
                               </div>
                               <div class="modal-body">
                                 <div class="row">
@@ -94,7 +94,7 @@
                                   
                                     <div class="panel-body">
 
-                                        <div class="table-responsive">
+                                        <div>
 
                           <form id="formEditCompany">             
                             <div class="row">
@@ -127,7 +127,7 @@
 
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtCorreo">Correo*</label>
+                                <label class="control-label" for="txtCorreo">Correo Electronico*</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
@@ -146,20 +146,15 @@
                                          
                                   </div>
                                  </div>
+
+                            </div>
                               <div class="modal-footer">
-                              <button type="button" id="btnEditEmpresa" class="btn btn-success" data-dismiss="modal">GUARDAR</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              <button type="button" id="btnEditEmpresa" data-dismiss="modal" class="btn btn-success" >Guardar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
                               </div>
-                            </div>
-                            
                           </div>
                         </div>
-                        
-                      </div>
-
-
-                      <div class="panel-footer">
                         
                       </div>
 
@@ -187,20 +182,17 @@
                                        
                                 </div>
                               </div>
-                            <div class="modal-footer">
-                              <button type="button" id="btnDeletEmpresa" class="btn btn-success" data-dismiss="modal">Aceptar</button>
-                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 
-                            </div>
-                          </div>                          
+                          </div>
+                            <div class="modal-footer">
+                              <button type="button" id="btnDeletEmpresa" class="btn btn-danger" >Borrar</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+                            </div>                          
                         </div>
                       </div>                      
                     </div>
 
-
-                      <div class="panel-footer">
-                        
-                      </div>
 
                   </div>
 

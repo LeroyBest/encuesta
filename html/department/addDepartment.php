@@ -34,19 +34,19 @@
 
             </div>
               <div class="title_left">
-                <h3>Departamento</h3>
+                <h3>Administración - Departamento</h3>
               </div>
 
              
             </div>
             
-            <div class="clearfix"></div>
+            <div class="clearfix"  style="height: 61px;" ></div>
 
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Crear departamento</h2>
+                    <h2>Crear Departamento</h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -70,8 +70,8 @@
                       </div>
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
-                          <label>Email:</label>
-                          <input type="text" id="txtEmailJefeDep" name="txtEmailJefeDep" class="form-control" placeholder="Email del jefe" required="required">
+                          <label>Correo Electronico:</label>
+                          <input type="text" id="txtEmailJefeDep" name="txtEmailJefeDep" class="form-control" placeholder="Correo del jefe" required="required">
                                                     
                         </div>
                       </div>
@@ -120,7 +120,7 @@
 
                       <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12 ">
-                            <button class="btn btn-success" >ACEPTAR</button>
+                            <button class="btn btn-success" >Aceptar</button>
                             
                                                     
                         </div>

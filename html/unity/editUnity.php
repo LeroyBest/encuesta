@@ -16,10 +16,24 @@
             <div class="page-title">
             <div id="msg"></div>
               <div class="title_left">
-                <h3>Unidad </h3>
+                <h3>Administración - Unidades </h3>
               </div>
+					<div class="title_right">
+						<div class=" form-group pull-right">
+                                 <form method="post" name="formEditUnity" action="?view=unity&mode=edit">
+                      <div class="form-group">
 
-             
+                          <div class="input-group">
+                            <input type="text" id="txtbuscarUnidad" name="txtbuscarUnidad" placeholder="Buscar Unidad"  class="form-control">
+                              <span class="input-group-btn">
+                                <a id="btnBuscarUn" class="btn btn-primary" title="Buscar"><i class="fa fa-search"></i></a>
+                              </span>
+                          </div>                      
+
+                      </div>
+                    </form>
+				</div>
+					</div>
             </div>
             
             <div class="clearfix"></div>
@@ -28,31 +42,19 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Editar Unidad</h2>
+                    <h2>Lista Unidades</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form method="post" name="formEditUnity" action="?view=unity&mode=edit">
-                      <div class="form-group">
-                        <div class="col-md-7 col-sm-9 col-xs-12 rows ">
-                          <label>Buscar:</label>
-                          <div class="input-group">
-                            <input type="text" id="txtbuscarUnidad" name="txtbuscarUnidad" class="form-control">
-                              <span class="input-group-btn">
-                                <input  id="btnBuscarUn" class="btn btn-primary" type="button" value="Buscar">
-                              </span>
-                          </div>                      
-                        </div>
-                      </div>
-                    </form>
+
 
 
                     <table class="table table-condensed table-hover dataTable no-footer" id="tblUnity">
                           <thead>
                             <th>Unidad</th>
                             <th>Gerente</th>
-                            <th>Email</th>
+                            <th>Correo Electronico</th>
                             <th>Empresa</th>
                             <th></th>
                           </thead>
@@ -81,7 +83,7 @@
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Editar Empresa</h4>
+                                <h4 class="modal-title">Editar Unidad</h4>
                               </div>
                               <div class="modal-body">
                                 <div class="row">
@@ -90,7 +92,7 @@
                                   
                                     <div class="panel-body">
 
-                                        <div class="table-responsive">
+                                        <div>
 
                           <form id="formEditUnity">             
                             <div class="row">
@@ -123,7 +125,7 @@
 
                             <div class="row">
                               <div class="col-md-3 form-group">
-                                <label class="control-label" for="txtCorreo">Correo*</label>
+                                <label class="control-label" for="txtCorreo">Correo Electronico*</label>
                               </div>  
                               <div class="col-md-7 form-group">
                                 <div class="controls input-group">
@@ -174,22 +176,20 @@
                                          
                                   </div>
                                  </div>
-                              <div class="modal-footer">
-                              <button type="button" id="btnEditUnidad" class="btn btn-success" data-dismiss="modal">GUARDAR</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                              </div>
                             </div>
-                            
+                              <div class="modal-footer">
+
+								<button type="button" id="btnEditUnidad" data-dismiss="modal" class="btn btn-success">Guardar</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                              </div>
                           </div>
                         </div>
                         
                       </div>
 
 
-                      <div class="panel-footer">
-                        
-                      </div>
+
 
                     </div>
 
@@ -215,20 +215,15 @@
                                        
                                 </div>
                               </div>
-                            <div class="modal-footer">
-                              <button type="button" id="btnDeleteUnity" class="btn btn-success" data-dismiss="modal">Aceptar</button>
-                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 
-                            </div>
-                          </div>                          
+                          </div>
+                            <div class="modal-footer">
+								<button type="button" id="btnDeleteUnity" data-dismiss="modal" class="btn btn-danger" >Borrar</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            </div>                          
                         </div>
                       </div>                      
                     </div>
-
-
-                      <div class="panel-footer">
-                        
-                      </div>
 
                   </div>
 

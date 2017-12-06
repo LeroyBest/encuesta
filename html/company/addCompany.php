@@ -32,13 +32,15 @@
 
             </div>
               <div class="title_left">
-                <h3>Empresa </h3>
+                <h3>Administración - Empresas </h3>
               </div>
+					<div class="title_right">
 
+					</div>
              
             </div>
             
-            <div class="clearfix"></div>
+            <div class="clearfix"  style="height: 61px;" ></div>
 
             <div class="row">
               <div class="col-md-12">
@@ -46,7 +48,7 @@
                   <div class="x_title">
                     <h2>Crear Empresa</h2>
                     
-                    <div class="clearfix"></div>
+                    <div class="clearfix" ></div>
                   </div>
                   <div class="x_content">
                   
@@ -69,15 +71,15 @@
                     </div>
                     <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
-                        <label>Email:</label>
-                        <input type="email" id="txtEmailGerente" name="txtEmailGerente" class="form-control" placeholder="Email del gerente" required="required">
+                        <label>Correo Electronico:</label>
+                        <input type="email" id="txtEmailGerente" name="txtEmailGerente" class="form-control" placeholder="Correo del gerente" required="required">
                                                   
                       </div>
                     </div>
                    <div class="form-group">
                       <div class="col-md-7 col-sm-9 col-xs-12 ">
-                          <button class="btn btn-primary">ACEPTAR</button>
-                          <button class="btn btn-danger">CANCELAR</button>
+                          <button class="btn btn-success">Aceptar</button>
+                          
                                                   
                       </div>
                     </div>

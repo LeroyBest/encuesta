@@ -25,8 +25,9 @@
               <div class="menu_section">
                 <h3></h3>
                 <ul class="nav side-menu">
-                  <li><a href="?view=home"><i class="fa fa-home"></i> Dashboard </a></li>
-                  <li><a><i class="fa fa-laptop"></i> Resultados </a>
+                  <li><a href="?view=home"><i class="fa fa-home"></i> Mis Encuestas </a></li>
+				  <li><a href="?view=result&mode=reporte"><i class="fa fa-laptop"></i> Resultados </a></li>
+                  <!--<li><a ><i class="fa fa-laptop"></i> Resultados </a>
                     <ul class="nav child_menu">
                       <li><a href="?view=result&mode=question"> Por preguntas </a></li>
                       <li><a href="?view=result&mode=criterio"> Por criterio </a></li>
@@ -34,15 +35,15 @@
 					  
 					  <!--<li><a href="?view=reporteDep"> Por Departamento </a></li>
                       <li><a href="?view=result&mode=criterio"> Por Unidad </a></li>
-					  <li><a href="?view=rsult&mode=all"> Por Empresa </a></li>-->
+					  <li><a href="?view=rsult&mode=all"> Por Empresa </a></li>
                      
                     </ul>
-                  </li>
+                  </li>-->
 
                   <li><a><i class="fa fa-cogs"></i> Administración </a>
 
                     <ul class="nav child_menu" >                      
-                      <li><a >Empresa <span class="fa fa-chevron-down"></span></a>
+                      <li><a >Empresas <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none">
                             <li class="sub_menu"><a href="?view=company&mode=add">Crear Empresa</a>
                             </li>
@@ -50,7 +51,7 @@
                             </li>                            
                           </ul>
                       </li>
-                      <li><a>Unidad <span class="fa fa-chevron-down"></span></a>
+                      <li><a>Unidades <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none;">
                             <li class="sub_menu"><a href="?view=unity&mode=add">Crear Unidad</a>
                             </li>
@@ -58,7 +59,7 @@
                             </li>
                           </ul>
                       </li>
-                      <li><a> Departamento <span class="fa fa-chevron-down"></span></a>
+                      <li><a> Departamentos <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none;">
                             <li class="sub_menu"><a href="?view=department&mode=add">Crear Departamento</a>
                             </li>
@@ -68,7 +69,7 @@
                             </li>
                           </ul>
                       </li>
-                      <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>-->
+                      <!--<li><a href="?view=envioencuesta&mode=enviar"> Enviar encuesta </a></li>
                       <li><a> Enviar encuesta <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu" style="display: none">
                             <li class="sub_menu"><a href="?view=send&mode=ind">Unitaria</a>
@@ -76,18 +77,20 @@
                             <li class="sub_menu"><a href="?view=send&mode=corp">Corporativa</a>
                             </li>                            
                           </ul>
-                      </li>
+                      </li>-->
                     <!--<ul class="nav child_menu">                      
 
                       <li><a href="?view=send"> Enviar encuesta </a></li>
 
                     </ul>-->
                   </li>                     
-                  
-                  
+                    
+                 
                   
                 </ul>
-              </div>
+                <li><a href="?view=send&mode=corp"><i class="fa fa-paper-plane"></i> Enviar Encuesta </a></li>
+				<li><a href="?view=logout"><i class="fa fa-power-off"></i> Cerrar Sesion </a></li>
+			  </div>
              
 
             </div>

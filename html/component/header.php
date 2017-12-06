@@ -18,8 +18,9 @@
     <link href="views/assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="views/assets/build/css/custom.min.css" rel="stylesheet">
+    
     <link href="views/css/progress/progresion.css" rel="stylesheet">
+	<link href="views/assets/build/css/custom.min.css" rel="stylesheet">
     <link href="views/app/css/encuesta.css" rel="stylesheet">
 
   </head>

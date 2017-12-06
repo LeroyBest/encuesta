@@ -43,7 +43,7 @@ a:focus, a:hover {
     text-decoration: underline;
 }
 body {
-    color: #fffff;
+    color: #000;
     background: #293744;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
@@ -88,4 +88,10 @@ body {
     margin: 0;
     padding-left: 10px;
 }
-
+.modal-footer .btn+.btn {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.nav-md .container.body .col-md-3.left_col {
+    z-index: 0;
+}

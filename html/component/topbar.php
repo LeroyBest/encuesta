@@ -10,7 +10,7 @@
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="views/images/user.png" alt=""><?php echo $_SESSION['user']?>
-                    <span class=" fa fa-angle-down"></span>
+                    <span></span>
                   </a>
 
                 </li>

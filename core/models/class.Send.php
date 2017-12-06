@@ -48,7 +48,7 @@ class Send {
 		$sn = $cifrado ->encodeBase64($this->idencuesta);
 		$eval = md5($para);
 		$this->link = APP_URL . '?view=survey&mode=list&sn='.$sn.'&eval='. $eval;
-		/*$mail = new PHPMailer();	
+		$mail = new PHPMailer();	
 		$mail->CharSet = "UTF-8";
 		$mail->Encoding = "quoted-printable";
 
@@ -62,19 +62,19 @@ class Send {
 		$mail->SetFrom("info@507developers.com", "Encuesta");	
 		$mail->AddAddress($para); 
 		$mail->Subject = 'Deseamos saber su opinión... ';
-		$mail->MsgHTML(EmailTemplate($nombre,$link ));*/
+		$mail->MsgHTML(EmailTemplate($nombre,$this->link));
 
 			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
-			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',unidad='$this->departamento',encuesta='$this->idencuesta',completado='0'");
-			//if($this->db->affected_rows>0){
-				//$mail->send();
-			//} else {
+			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->departamento',encuesta='$this->idencuesta',completado='0'");
+			if($this->db->affected_rows>0){
+				$mail->send();
+			} else {
 			  
-			//} 
+			} 
 
 		}
-		echo $this->link;
-	//header('location: ?view=home');
+		//echo $this->link;
+	header('location: ?view=home');
 
 
 

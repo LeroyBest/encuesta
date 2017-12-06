@@ -91,7 +91,7 @@ function listUnity(unity){
 		       		$.each( datos, function( key, value ) {
 		       		
 			  			console.log("editCompany("+'"'+value.id_empresa+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+value.colaborador+'",'+value.empresa+'",'+")");
-			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-xs' onclick='editUnity("+'"'+value.id_unidad+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+'"'+value.fk_empresa+'",'+'"'+value.empresa+'"'+")'><i class='fa fa-pencil'> editar</i></a><a class='btn btn-danger btn-xs' onclick='deleteUnity("+'"'+value.id_unidad+'"'+")'><i class='fa fa-trash-o'> borrar</i></a></td></tr>");
+			  			$("#cuerpo").append("<tr ><td><b>"+value.descripcion+"</b></td><td>"+value.colaborador+"</td><td>"+value.correo+"</td><td>"+value.empresa+"</td><td><a class='btn btn-primary btn-md' title='Editar' onclick='editUnity("+'"'+value.id_unidad+'",'+'"'+value.descripcion+'",'+'"'+value.colaborador+'",'+'"'+value.correo+'",'+'"'+value.fk_empresa+'",'+'"'+value.empresa+'"'+")'><i class='fa fa-pencil'></i></a><a class='btn btn-danger btn-md' title='Borrar' onclick='deleteUnity("+'"'+value.id_unidad+'"'+")'><i class='fa fa-trash-o'></i></a></td></tr>");
 					
 					});
 
