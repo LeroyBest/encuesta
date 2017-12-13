@@ -36,6 +36,8 @@
 						
 				if(isset($_POST['generar'])){
 					$HTML = false;
+					$sql = $db->query("SELECT count(distinct cliente) cantidad, sum(valores_estudio) sumaValores FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in(select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where id_unidad=$departamento)))");	
+
 				}else{
 
 					//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
