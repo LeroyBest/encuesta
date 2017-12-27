@@ -27,7 +27,7 @@ class Evaluation {
 
 	public function promedioCriterio($departamento){
 		    $resp =array();  
-			$sql = $this->db->query("SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in '$departamento') group by fk_criterio");
+			$sql = $this->db->query("SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in ('$departamento')) group by fk_criterio");
 
 				if ($this->db->rows($sql) > 0) {
 				    // output data of each row
@@ -100,9 +100,9 @@ class Evaluation {
 		return $resp;
 				
 	}
-	public function calculoReportes($departamento,$HTML,$criterio){
+	public function calculoReportes($departamento,$HTML,$criterio,$criterioProm){
 
-		$criterioProm = $this->promedioCriterio($departamento);
+		
 		$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
 
 		switch (floor($total)) {

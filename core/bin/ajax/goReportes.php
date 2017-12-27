@@ -38,6 +38,22 @@
 					$HTML = false;
 					$sql = $db->query("SELECT count(distinct cliente) cantidad, sum(valores_estudio) sumaValores FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in(select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where id_unidad=$departamento)))");	
 
+						if($db->rows($sql) > 0) {
+						while($data = $db->recorrer($sql)) {
+							$HTML[] = $data;
+						}
+					
+					}
+
+					//valida resultado obtenido en la evaluacion
+					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
+						
+						$HTML = $evaluacion->calculoReportes($departamento,$HTML,$criterio);
+					}
+					else{$HTML=false;}
+
+
+
 				}else{
 
 					//$sql = $db->query("SELECT * FROM tbl_unidad WHERE descripcion like '%$buscaUnidad%' and activo =1");
@@ -76,6 +92,9 @@
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
 						$criterioProm = $evaluacion->promedioCriterio($departamento);
+						$HTML = $evaluacion->calculoReportes($departamento,$HTML,$criterio,$criterioProm);
+
+						/*$criterioProm = $evaluacion->promedioCriterio($departamento);
 						$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
 
 						switch (floor($total)) {
@@ -168,7 +187,7 @@
 
 
 						//print_r($HTML[2]['pregunta'][1]);
-
+*/
 						
 					}else{$HTML=false;}
 				}else{
