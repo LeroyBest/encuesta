@@ -100,7 +100,32 @@ class Evaluation {
 		return $resp;
 				
 	}
-	public function calculoReportes($departamento,$HTML,$criterio,$criterioProm){
+
+	public function listaDepXUnidad($departamento){
+		$resp =array();  
+			$sql = $this->db->query("SELECT id_departamento,descripcion FROM tbl_departamento where fk_unidad = $departamento and activo =1");
+
+				if ($this->db->rows($sql) > 0) {
+				    // output data of each row
+				    while($data = $this->db->recorrer($sql)) {
+				        $resp[] = array("id" => $data["id_departamento"], "descripcion" => $data["descripcion"]);
+				    					
+				    }
+				} 
+				else {
+				    $resp =false;
+				}
+			
+		return $resp;
+				
+	}
+
+	public function listaDepXEmpresa(){
+		
+	}
+
+
+	public function calculoReportes($HTML,$criterio,$criterioProm){
 
 		
 		$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;

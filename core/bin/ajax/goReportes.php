@@ -47,8 +47,9 @@
 
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
-						
-						$HTML = $evaluacion->calculoReportes($departamento,$HTML,$criterio);
+						$listaDepXUnidad = $evaluacion->listaDepXUnidad($departamento);
+						$criterioProm = $evaluacion->promedioCriterio($listaDepXUnidad);
+						$HTML = $evaluacion->calculoReportes($HTML,$criterio,$criterioProm);
 					}
 					else{$HTML=false;}
 
@@ -92,7 +93,7 @@
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
 						$criterioProm = $evaluacion->promedioCriterio($departamento);
-						$HTML = $evaluacion->calculoReportes($departamento,$HTML,$criterio,$criterioProm);
+						$HTML = $evaluacion->calculoReportes($HTML,$criterio,$criterioProm);
 
 						/*$criterioProm = $evaluacion->promedioCriterio($departamento);
 						$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
