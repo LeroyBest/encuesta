@@ -16,6 +16,36 @@
 			
 			if(isset($_POST['generar'])){
 					$HTML = false;
+					$sql = $db->query("SELECT count(distinct cliente) cantidad, sum(valores_estudio) sumaValores FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in(select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=$departamento)))");	
+
+						if($db->rows($sql) > 0) {
+						while($data = $db->recorrer($sql)) {
+							$HTML[] = $data;
+						}
+					
+					}
+
+					//valida resultado obtenido en la evaluacion
+					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
+						$departamentos="";
+						$cont =0;
+						$listaDepXEmpresa = $evaluacion->listaDepXEmpresa($departamento);
+						//print_r($listaDepXEmpresa);
+						foreach ($listaDepXEmpresa as $key => $value) {
+							if ($cont <> 0) {
+								$departamentos = $departamentos.",";
+							}
+							$departamentos =$departamentos.$listaDepXEmpresa[$key]['id'];
+							$cont++;
+						}
+						//print_r($departamentos);
+						$criterioProm = $evaluacion->promedioCriterio($departamentos);
+						//print_r($criterioProm );
+						$HTML = $evaluacion->calculoReportes($HTML,$criterio,$criterioProm);
+					}
+					else{$HTML=false;}
+
+
 			}else{
 
 				$sql = $db->query("SELECT * FROM tbl_empresa WHERE activo =1");
@@ -47,8 +77,18 @@
 
 					//valida resultado obtenido en la evaluacion
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
+						$departamentos="";
+						$cont =0;
 						$listaDepXUnidad = $evaluacion->listaDepXUnidad($departamento);
-						$criterioProm = $evaluacion->promedioCriterio($listaDepXUnidad);
+						foreach ($listaDepXUnidad as $key => $value) {
+							if ($cont <> 0) {
+								$departamentos = $departamentos.",";
+							}
+							$departamentos =$departamentos.$listaDepXUnidad[$key]['id'];
+							$cont++;
+						}
+						//print_r($departamentos);
+						$criterioProm = $evaluacion->promedioCriterio($departamentos);
 						$HTML = $evaluacion->calculoReportes($HTML,$criterio,$criterioProm);
 					}
 					else{$HTML=false;}
@@ -94,101 +134,6 @@
 					if($HTML[0]['cantidad'] > 0 && $HTML[0]['sumaValores']!=""){
 						$criterioProm = $evaluacion->promedioCriterio($departamento);
 						$HTML = $evaluacion->calculoReportes($HTML,$criterio,$criterioProm);
-
-						/*$criterioProm = $evaluacion->promedioCriterio($departamento);
-						$total = ($HTML[0]['sumaValores']/$HTML[0]['cantidad'])/17;
-
-						switch (floor($total)) {
-							case 1:
-									foreach ($criterioProm as $key => $value) {
-										if($criterioProm[$key]['promedio']< 2){
-											$criterio[] = $criterioProm[$key]['criterio'];
-										}
-									}
-
-								break;
-
-							case 2:
-									foreach ($criterioProm as $key => $value) {
-										if($criterioProm[$key]['promedio']< 3){
-											$criterio[] = $criterioProm[$key]['criterio'];
-											//print_r($criterio);
-										}
-									}	
-
-								break;
-
-							case 3:
-
-									foreach ($criterioProm as $key => $value) {
-										if($criterioProm[$key]['promedio']< 3){
-											$criterio[] = $criterioProm[$key]['criterio'];
-											//print_r($criterio);
-										}
-									}
-								
-								break;
-
-							case 4:
-								
-									foreach ($criterioProm as $key => $value) {
-										if($criterioProm[$key]['promedio']< 3){
-											$criterio[] = $criterioProm[$key]['criterio'];
-											//print_r($criterio);
-										}
-									}
-
-								break;
-
-							case 5:
-
-									foreach ($criterioProm as $key => $value) {
-										if($criterioProm[$key]['promedio']< 3){
-											$criterio[] = $criterioProm[$key]['criterio'];
-										}
-									}
-								
-								break;
-							
-							default:
-								# code...
-								break;
-						}
-
-
-						$preguntasBajas = $evaluacion->criteriosBajos($criterio);
-						//print_r($preguntasBajas);
-						$idCriterio = 0;
-						$vineta =0;
-						$tercer_resultado = "<p><strong><u>TERCER RESULTADO:</u></strong></p><p>Las &Aacute;reas&nbsp; y criterios que, en el caso de su Unidad administrativa, requieren de urgente atenci&oacute;n y mejora son los siguientes:</p>
-							<p>&nbsp;</p>";
-
-
-						foreach ($preguntasBajas as $key => $value) {
-							//$tercer_resultado= $preguntasBajas[$key]['descripcion'];
-
-							if($idCriterio == $preguntasBajas[$key]['id_criterio']){
-								$vineta +=1;
-								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta'];
-							}
-							else{
-								$vineta=0;
-								$vineta +=1;
-								$idCriterio = $preguntasBajas[$key]['id_criterio'];
-								$tercer_resultado=$tercer_resultado."<strong>".$preguntasBajas[$key]['id_criterio'].") ".$preguntasBajas[$key]['descripcion']."</strong><p>&nbsp;</p>";
-								$tercer_resultado = $tercer_resultado." ".$preguntasBajas[$key]['id_criterio'].".".$vineta." ".$preguntasBajas[$key]['pregunta']."<p>&nbsp;</p>";
-
-							}
-						}
-						$tercer_resultado = $tercer_resultado."<p>&nbsp;</p><p>&nbsp;</p>";
-//echo "tercer_resultado ".$tercer_resultado;
-
-						$HTML[] =$evaluacion->evalResult(floor($total));
-						$HTML[] = array("pregunta" => $tercer_resultado);
-
-
-						//print_r($HTML[2]['pregunta'][1]);
-*/
 						
 					}else{$HTML=false;}
 				}else{

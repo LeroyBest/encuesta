@@ -27,7 +27,7 @@ class Evaluation {
 
 	public function promedioCriterio($departamento){
 		    $resp =array();  
-			$sql = $this->db->query("SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in ('$departamento')) group by fk_criterio");
+			$sql = $this->db->query("SELECT fk_criterio as criterio, (sum(valores_estudio)/count(distinct fk_pregunta))/count(distinct cliente) promedio FROM tbl_estudio WHERE cliente in (SELECT cadena FROM tbl_encuesta_valida where departamento in ($departamento)) group by fk_criterio");
 
 				if ($this->db->rows($sql) > 0) {
 				    // output data of each row
@@ -120,7 +120,22 @@ class Evaluation {
 				
 	}
 
-	public function listaDepXEmpresa(){
+	public function listaDepXEmpresa($departamento){
+		$resp =array();  
+			$sql = $this->db->query("SELECT id_departamento,descripcion FROM tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=$departamento) and activo =1");
+
+				if ($this->db->rows($sql) > 0) {
+				    // output data of each row
+				    while($data = $this->db->recorrer($sql)) {
+				        $resp[] = array("id" => $data["id_departamento"], "descripcion" => $data["descripcion"]);
+				    					
+				    }
+				} 
+				else {
+				    $resp =false;
+				}
+			
+		return $resp;
 		
 	}
 
