@@ -88,7 +88,7 @@
                  
                   
                 </ul>
-                <li><a href="?view=send&mode=corp"><i class="fa fa-paper-plane"></i> Enviar Encuesta </a></li>
+                <li><a href="?view=send&mode=enviar"><i class="fa fa-paper-plane"></i> Enviar Encuesta </a></li>
 				<li><a href="?view=logout"><i class="fa fa-power-off"></i> Cerrar Sesion </a></li>
 			  </div>
              

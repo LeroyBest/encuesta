@@ -43,7 +43,7 @@
                             <option >Unidad</option>
                             <option >Departamento</option>
                           </select>
-                      </div>
+                        </div>
 
                       <div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback">
                         <select id ="nombre" name ="nombre" class="form-control has-feedback-left"  >
@@ -54,40 +54,41 @@
 
                         
                       </div>
-						  <div class="rows">
-                    
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+          						  <div class="rows">
+                              
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
 
-                          <select class="form-control " name="selencuesta">
-                            <?php
-                              foreach ($resp as $key => $value) {
-                                echo '<option name="prueba" value="'.$resp[$key ]["id_encuesta"].'">'.$resp[$key ]["titulo"].'</option>';
+                                    <select class="form-control " name="selencuesta">
+                                      <?php
+                                        foreach ($resp as $key => $value) {
+                                          echo '<option name="prueba" value="'.$resp[$key ]["id_encuesta"].'">'.$resp[$key ]["titulo"].'</option>';
 
-                              }
-                            ?>
-                            
-                           
-                          </select>
+                                        }
+                                      ?>
+                                      
+                                     
+                                    </select>
+                                 
+                                  </div>
+
+                              
+                                    
+                                  <div class="col-md-6">
+                                          <button  id="btncreacorreos" class="btn btn-primary pull-right">ENVIAR</button>
+                                    
+                                  </div>
+                             
+
+          						</div>
+
+                      <div id="conttext" class="col-md-12">
+                        
+                      </div>
+                             
+                      <div id="contbutton" class="col-md-12">
                        
                       </div>
-
                     
-                          
-                          <div class="col-md-6">
-                                  <input type="button" id="btncreacorreos" value="ENVIAR" class="btn btn-primary pull-right">
-                            
-                          </div>
-                   
-
-						</div>
-                        <div id="conttext" class="col-md-12">
-                          
-                        </div>
-                             
-                        <div id="contbutton" class="col-md-12">
-                         
-                        </div>
-                      
                   </form>    
                     <!-- end project list -->
 
