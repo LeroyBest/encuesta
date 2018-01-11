@@ -25,12 +25,21 @@ if(isset($_SESSION['user'])) {
       if($_POST) {
 
         if ($_POST['tipo'] == "Empresa"){
+          $correos = $send->ListaEmpXEmpresa($_POST['nombre']);
+
+         // $send->EnviarEncuesta($correos);
+          print_r($correos) ;
+         //print_r($_POST['nombre']);
 
         }
         else if($_POST['tipo'] == "Unidad"){
+          $correos = $send->ListaEmpXUnidad();
+          $send->EnviarEncuesta($correos);
 
         }
         else if ($_POST['tipo'] == "Departamento"){
+          $correos = $send->ListaEmpXDepartamento();
+          $send->EnviarEncuesta($correos);
 
         }
         /*SELECT employees.colaborador,employees.correo 
