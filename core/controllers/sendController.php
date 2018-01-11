@@ -27,10 +27,10 @@ if(isset($_SESSION['user'])) {
         if ($_POST['tipo'] == "Empresa"){
 
         }
-        else if($_POST['tipo'] == "Unidad")){
+        else if($_POST['tipo'] == "Unidad"){
 
         }
-        else if ($_POST['tipo'] == "Departamento")){
+        else if ($_POST['tipo'] == "Departamento"){
 
         }
         /*SELECT employees.colaborador,employees.correo 
