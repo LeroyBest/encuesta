@@ -21,6 +21,6 @@ require('core/models/class.Conexion.php');
 require('core/models/class.phpmailer.php');
 require('core/models/class.smtp.php');
 require('core/bin/functions/CorreoTemplate.php');
-require('core/bin/functions/Cifrado.php');
+require('core/bin/functions/cifrado.php');
 require ('core/bin/functions/separadorCorreos.php');
 ?>

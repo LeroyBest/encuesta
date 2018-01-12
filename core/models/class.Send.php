@@ -29,22 +29,25 @@ class Send {
 		}
 	}
   
-	public function EnviarEncuesta() {
+	public function EnviarEncuesta($correos) {
 
-       $this->Errors('?view=send&mode=enviar&error=');
-		$cifrado = new Cifrado();
+       //$this->Errors('?view=send&mode=enviar&error=');
+		$cifrado = new cifrado();
 		$para;
 		$mensaje;
         $link;
-		
-		for ($i=0; $i < $this->num; $i++) { 
-		$para=$_POST['correo'.$i];
-		$nombre=$_POST['nombre'.$i];
+		//print_r($correos);
+		//for ($i=0; $i < $this->num; $i++) { 
+        foreach ($correos as $key => $value) {
+		//$para=$_POST['correo'.$i];
+		//$nombre=$_POST['nombre'.$i];
+        	$para=$correos[$key]['correo'];
+			$nombre=$correos[$key]['colaborador'];
 
 
 		//$mensaje = "http://localhost/encuesta/?view=preguntas&mode=list&sn=".$cifrado ->encodeBase64($idencuesta)."&eval=". md5($para);
 
-
+/*
 		$sn = $cifrado ->encodeBase64($this->idencuesta);
 		$eval = md5($para);
 		$this->link = APP_URL . '?view=survey&mode=list&sn='.$sn.'&eval='. $eval;
@@ -71,11 +74,11 @@ class Send {
 			} else {
 			  
 			} 
-
+*/echo $para;
 		}
+		
 		//echo $this->link;
-	header('location: ?view=home');
-
+	//header('location: ?view=home');
 
 
 }
@@ -94,8 +97,8 @@ class Send {
 		$this->db->liberar($sql);  
 		return $resp;
 	}
-	public function ListaEmpXEmpresa($a){
-		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in (select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=$a))");
+	public function ListaEmpXEmpresa($empresa){
+		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in (select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=$empresa))");
 
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {

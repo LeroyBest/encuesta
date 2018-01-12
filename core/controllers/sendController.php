@@ -27,9 +27,11 @@ if(isset($_SESSION['user'])) {
         if ($_POST['tipo'] == "Empresa"){
           $correos = $send->ListaEmpXEmpresa($_POST['nombre']);
 
-         // $send->EnviarEncuesta($correos);
-          print_r($correos) ;
+          $a = $send->EnviarEncuesta($correos);
+         // print_r($correos) ;
          //print_r($_POST['nombre']);
+          print_r($a) ;
+        //echo $a;
 
         }
         else if($_POST['tipo'] == "Unidad"){
@@ -49,7 +51,7 @@ if(isset($_SESSION['user'])) {
           and dep.id_departamento = employees.fk_departamento
         */
        // $send->EnviarEncuesta();
-        echo $_POST['tipo'];
+       // echo $_POST['tipo'];
       } else {
         include(HTML_DIR . 'send/sendsurveycorporative.php');
       }
