@@ -14,34 +14,53 @@ if(isset($_SESSION['user'])) {
         include(HTML_DIR . 'send/sendsurvey.php');
       }
     break;*/
-    case 'ind':
-      if($_POST) {
-        $send->EnviarEncuesta();
-      } else {
-        include(HTML_DIR . 'send/sendsurvey.php');
-      }
-    break;
+    
+
     case 'enviar':
       if($_POST) {
 
         if ($_POST['tipo'] == "Empresa"){
           $correos = $send->ListaEmpXEmpresa($_POST['nombre']);
+          if(!empty($correos)){
+                $a = $send->EnviarEncuesta($correos);
+               // print_r($correos) ;
+               //print_r($_POST['nombre']);
+                print_r($a) ;
+          }
+          else{
+            include(HTML_DIR . 'send/sendsurveycorporative.php');
+            echo "la empresa no tiene departamentos asociados";
+          }
 
-          $a = $send->EnviarEncuesta($correos);
-         // print_r($correos) ;
-         //print_r($_POST['nombre']);
-          print_r($a) ;
         //echo $a;
 
         }
         else if($_POST['tipo'] == "Unidad"){
-          $correos = $send->ListaEmpXUnidad();
-          $send->EnviarEncuesta($correos);
+          $correos = $send->ListaEmpXUnidad($_POST['nombre']);
+          if(!empty($correos)){
+                $a = $send->EnviarEncuesta($correos);
+               // print_r($correos) ;
+               //print_r($_POST['nombre']);
+                print_r($a) ;
+          }
+          else{
+           include(HTML_DIR . 'send/sendsurveycorporative.php');
+            echo "la unidad no tiene departamentos asociados";
+          }
 
         }
         else if ($_POST['tipo'] == "Departamento"){
-          $correos = $send->ListaEmpXDepartamento();
-          $send->EnviarEncuesta($correos);
+          $correos = $send->ListaEmpXDepartamento($_POST['nombre']);
+          if(!empty($correos)){
+                $a = $send->EnviarEncuesta($correos);
+               // print_r($correos) ;
+               //print_r($_POST['nombre']);
+                print_r($a) ;
+          }
+          else{
+            include(HTML_DIR . 'send/sendsurveycorporative.php');
+            echo "El departamento no tiene empleados";
+          }
 
         }
         /*SELECT employees.colaborador,employees.correo 

@@ -74,11 +74,11 @@ class Send {
 			} else {
 			  
 			} 
-*/echo $para;
+*/
 		}
 		
 		//echo $this->link;
-	//header('location: ?view=home');
+	 include(HTML_DIR . 'send/sentsurvey.php');
 
 
 }
@@ -112,12 +112,13 @@ class Send {
 		return $resp;
 
 	}
-	public function ListaEmpXUnidad(){
-		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in (select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=2))");
+	public function ListaEmpXUnidad($unidad){
+		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in (select id_departamento from tbl_departamento where fk_unidad in ($unidad))");
 
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
-				$resp[$data['id_encuesta']] = $data;
+				 $resp[] = array("id" => $data["id_empleado"], "departamento" => $data["fk_departamento"], "colaborador" => $data["colaborador"], "correo" => $data["correo"]);
+
 			}
 		} else {
 			$resp = false;
@@ -125,12 +126,13 @@ class Send {
 		$this->db->liberar($sql);  
 		return $resp;
 	}
-	public function ListaEmpXDepartamento(){
-		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in (select id_departamento from tbl_departamento where fk_unidad in (select id_unidad from tbl_unidad where fk_empresa=2))");
+	public function ListaEmpXDepartamento($departamento){
+		$sql = $this->db->query("SELECT id_empleado,fk_departamento,colaborador,correo FROM tbl_empleados WHERE fk_departamento in ($departamento)");
 
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
-				$resp[$data['id_encuesta']] = $data;
+				 $resp[] = array("id" => $data["id_empleado"], "departamento" => $data["fk_departamento"], "colaborador" => $data["colaborador"], "correo" => $data["correo"]);
+
 			}
 		} else {
 			$resp = false;

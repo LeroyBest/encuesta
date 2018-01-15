@@ -82,7 +82,16 @@
           						</div>
 
                       <div id="conttext" class="col-md-12">
-                        
+                        <?php
+                          if(!empty($correos)){
+                            foreach ($correos as $key => $value) {
+                              
+                              $para=$correos[$key]['correo'];
+                              $nombre=$correos[$key]['colaborador'];
+                              echo $para;
+                            }
+                          }
+                        ?>
                       </div>
                              
                       <div id="contbutton" class="col-md-12">
