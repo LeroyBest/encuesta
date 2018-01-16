@@ -14,7 +14,14 @@
         <div class="right_col" id="content" role="main">
           <div class="">
             <div class="page-title">
-            <div id="msg"></div>
+            <div id="msg">
+              <?php
+                if (isset($error)){
+                  echo "<div class='alert alert-dismissible alert-danger'>".$error."<button type='button' class='close' data-dismiss='alert'>x</button></div>";
+                }
+
+              ?>
+            </div>
               <div class="title_left">
                 <h3>Enviar Encuesta</h3>
               </div>

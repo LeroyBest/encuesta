@@ -1,7 +1,7 @@
  <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="?view=preguntas&mode=list" class="site_title"><i class="fa fa-file-text-o"></i> <span>Encuestas</span></a>
+              <a href="?view=home" class="site_title"><i class="fa fa-file-text-o"></i> <span>Encuestas</span></a>
             </div>
 
             <div class="clearfix"></div>

@@ -95,3 +95,14 @@ body {
 .nav-md .container.body .col-md-3.left_col {
     z-index: 0;
 }
+#correosEnv{
+    font-size: 15px;
+}
+.projects{
+    font-size: 14px;
+    text-align: center;
+}
+.projects th {
+    font-size: 18px;
+    text-align: center;
+}

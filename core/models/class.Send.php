@@ -36,36 +36,35 @@ class Send {
 		$para;
 		$mensaje;
         $link;
-		//print_r($correos);
+		
 		//for ($i=0; $i < $this->num; $i++) { 
         foreach ($correos as $key => $value) {
-		//$para=$_POST['correo'.$i];
-		//$nombre=$_POST['nombre'.$i];
+		
         	$para=$correos[$key]['correo'];
 			$nombre=$correos[$key]['colaborador'];
 
 
-		//$mensaje = "http://localhost/encuesta/?view=preguntas&mode=list&sn=".$cifrado ->encodeBase64($idencuesta)."&eval=". md5($para);
+			$mensaje = "http://localhost/encuesta/?view=preguntas&mode=list&sn=".$cifrado ->encodeBase64($idencuesta)."&eval=". md5($para);
 
-/*
-		$sn = $cifrado ->encodeBase64($this->idencuesta);
-		$eval = md5($para);
-		$this->link = APP_URL . '?view=survey&mode=list&sn='.$sn.'&eval='. $eval;
-		$mail = new PHPMailer();	
-		$mail->CharSet = "UTF-8";
-		$mail->Encoding = "quoted-printable";
 
-		$mail->isSMTP();                                      		
-		$mail->SMTPDebug    = 1;
-		$mail->SMTPAuth = false;                               		
-		$mail->Host = "a2plcpnl0416.prod.iad2.secureserver.net"; 
-		$mail->Port = 25;                                    		
-		$mail->Username = "info@507developers.com";                		
-		$mail->Password = "507developers.com";                       		
-		$mail->SetFrom("info@507developers.com", "Encuesta");	
-		$mail->AddAddress($para); 
-		$mail->Subject = 'Deseamos saber su opinión... ';
-		$mail->MsgHTML(EmailTemplate($nombre,$this->link));
+			$sn = $cifrado ->encodeBase64($this->idencuesta);
+			$eval = md5($para);
+			$this->link = APP_URL . '?view=survey&mode=list&sn='.$sn.'&eval='. $eval;
+			$mail = new PHPMailer();	
+			$mail->CharSet = "UTF-8";
+			$mail->Encoding = "quoted-printable";
+
+			$mail->isSMTP();                                      		
+			$mail->SMTPDebug    = 1;
+			$mail->SMTPAuth = false;                               		
+			$mail->Host = "a2plcpnl0416.prod.iad2.secureserver.net"; 
+			$mail->Port = 25;                                    		
+			$mail->Username = "info@507developers.com";                		
+			$mail->Password = "507developers.com";                       		
+			$mail->SetFrom("info@507developers.com", "Encuesta");	
+			$mail->AddAddress($para); 
+			$mail->Subject = 'Deseamos saber su opinión... ';
+			$mail->MsgHTML(EmailTemplate($nombre,$this->link));
 
 			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
 			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->departamento',encuesta='$this->idencuesta',completado='0'");
@@ -74,7 +73,7 @@ class Send {
 			} else {
 			  
 			} 
-*/
+
 		}
 		
 		//echo $this->link;

@@ -49,7 +49,7 @@
                               
                               $para=$correos[$key]['correo'];
                               $nombre=$correos[$key]['colaborador'];
-                              echo "<div><i class='fa fa-check'></i></div>"$para;
+                              echo "<div class='row'><div class='col-md-2 form-group' id ='correosEnv'>".$nombre."</div><div class='col-md-3'>".$para ."</div><div class='col-md-3'><i class='fa fa-check'></i></div></div>";
                             }
                           }
                         ?>

@@ -23,13 +23,11 @@ if(isset($_SESSION['user'])) {
           $correos = $send->ListaEmpXEmpresa($_POST['nombre']);
           if(!empty($correos)){
                 $a = $send->EnviarEncuesta($correos);
-               // print_r($correos) ;
-               //print_r($_POST['nombre']);
-                print_r($a) ;
+           
           }
           else{
+            $error ="La empresa seleccionada no tiene departamentos asociados";
             include(HTML_DIR . 'send/sendsurveycorporative.php');
-            echo "la empresa no tiene departamentos asociados";
           }
 
         //echo $a;
@@ -39,13 +37,11 @@ if(isset($_SESSION['user'])) {
           $correos = $send->ListaEmpXUnidad($_POST['nombre']);
           if(!empty($correos)){
                 $a = $send->EnviarEncuesta($correos);
-               // print_r($correos) ;
-               //print_r($_POST['nombre']);
-                print_r($a) ;
+               
           }
           else{
+            $error ="La unidad seleccionada no tiene departamentos asociados";
            include(HTML_DIR . 'send/sendsurveycorporative.php');
-            echo "la unidad no tiene departamentos asociados";
           }
 
         }
@@ -53,13 +49,11 @@ if(isset($_SESSION['user'])) {
           $correos = $send->ListaEmpXDepartamento($_POST['nombre']);
           if(!empty($correos)){
                 $a = $send->EnviarEncuesta($correos);
-               // print_r($correos) ;
-               //print_r($_POST['nombre']);
-                print_r($a) ;
+               
           }
           else{
+            $error ="El departamento seleccionado no tiene empleados asociados";
             include(HTML_DIR . 'send/sendsurveycorporative.php');
-            echo "El departamento no tiene empleados";
           }
 
         }

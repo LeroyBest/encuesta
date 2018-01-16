@@ -56,7 +56,7 @@ if(false != $resp) {
 	  echo '<td>'.$resp[$key ]["fecha_creacion"].'</td>';
 	  echo '<td>'.$resp[$key ]["completado"].'</td>';
 	  echo '<td>'.$resp[$key ]["total"].'</td>';
-	  echo '<td><button id ="reportpdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button></td></tr>';
+	 
 	}
 }
 ?>
