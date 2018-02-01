@@ -55,7 +55,7 @@ class Survey {
 		$sql = $this->db->query("SELECT * FROM tbl_encuesta_valida where cadena ='$this->evalu'  and encuesta =$encuesta ");
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
-				$resp = $data[3];
+				$resp = $data[4];
 			}
 		} else {
 			$resp = 0;
