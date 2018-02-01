@@ -3,8 +3,8 @@
 class Send {
 
   private $idencuesta;
-  private $departamento;
-  private $num;
+  private $id_organizacion;
+  private $tipo_organizacion;
   private $link;
   private $db;
 
@@ -15,12 +15,12 @@ class Send {
 	private function Errors($url) {
 		try {
 
-		  if(empty($_POST['selencuesta'])||empty($_POST['depart'])||empty($_POST['numEncuestados'])) {
+		  if(empty($_POST['selencuesta'])||empty($_POST['nombre'])||empty($_POST['tipo'])) {
 			throw new Exception(1);
 		  } else {
 			$this->idencuesta = $this->db->real_escape_string($_POST['selencuesta']);
-			$this->departamento = $this->db->real_escape_string($_POST['depart']);
-			$this->num = $this->db->real_escape_string($_POST['numEncuestados']);
+			$this->id_organizacion = $this->db->real_escape_string($_POST['nombre']);
+			$this->tipo_organizacion = $this->db->real_escape_string($_POST['tipo']);
 				
 		  }
 		} catch(Exception $error) {
@@ -31,7 +31,7 @@ class Send {
   
 	public function EnviarEncuesta($correos) {
 
-       //$this->Errors('?view=send&mode=enviar&error=');
+       $this->Errors('?view=send&mode=enviar&error=');
 		$cifrado = new cifrado();
 		$para;
 		$mensaje;
@@ -67,7 +67,7 @@ class Send {
 			$mail->MsgHTML(EmailTemplate($nombre,$this->link));
 
 			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
-			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->departamento',encuesta='$this->idencuesta',completado='0'");
+			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->id_organizacion',encuesta='$this->idencuesta',completado='0'");
 			if($this->db->affected_rows>0){
 				$mail->send();
 			} else {

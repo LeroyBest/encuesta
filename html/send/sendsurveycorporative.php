@@ -45,10 +45,10 @@
                       <div class="rows">
                         <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
                           <select type="text" name="tipo" class="form-control has-feedback-left" id="tipo">
-                            <option>-Escojer una opcion-</option>
-                            <option >Empresa</option>
-                            <option >Unidad</option>
-                            <option >Departamento</option>
+                            <option value="0">-Escojer una opcion-</option>
+                            <option value="1">Empresa</option>
+                            <option value="2">Unidad</option>
+                            <option value="3">Departamento</option>
                           </select>
                         </div>
 
