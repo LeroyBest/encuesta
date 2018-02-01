@@ -18,9 +18,24 @@ class Send {
 		  if(empty($_POST['selencuesta'])||empty($_POST['nombre'])||empty($_POST['tipo'])) {
 			throw new Exception(1);
 		  } else {
+		  	switch ($_POST['tipo']) {
+		  		case 'Empresa':
+		  				$this->tipo_organizacion = "1";
+		  			break;
+		  		case 'Unidad':
+		  				$this->tipo_organizacion = "2";
+		  			break;
+		  		case 'Departamento':
+		  				$this->tipo_organizacion = "3";
+		  			break;
+		  		
+		  		default:
+		  			$this->tipo_organizacion = "0";
+		  			break;
+		  	}
 			$this->idencuesta = $this->db->real_escape_string($_POST['selencuesta']);
 			$this->id_organizacion = $this->db->real_escape_string($_POST['nombre']);
-			$this->tipo_organizacion = $this->db->real_escape_string($_POST['tipo']);
+			//$this->tipo_organizacion = $this->db->real_escape_string($_POST['tipo']);
 				
 		  }
 		} catch(Exception $error) {
@@ -67,7 +82,7 @@ class Send {
 			$mail->MsgHTML(EmailTemplate($nombre,$this->link));
 
 			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
-			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->id_organizacion',encuesta='$this->idencuesta',completado='0'");
+			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->id_organizacion',tipo_organizacion='$this->tipo_organizacion',encuesta='$this->idencuesta',completado='0'");
 			if($this->db->affected_rows>0){
 				$mail->send();
 			} else {
