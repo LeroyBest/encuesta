@@ -57,7 +57,7 @@ class Send {
 		
         	$para=$correos[$key]['correo'];
 			$nombre=$correos[$key]['colaborador'];
-
+			$departamento=$correos[$key]['departamento'];
 
 			$mensaje = "http://localhost/encuesta/?view=preguntas&mode=list&sn=".$cifrado ->encodeBase64($idencuesta)."&eval=". md5($para);
 
@@ -82,7 +82,7 @@ class Send {
 			$mail->MsgHTML(EmailTemplate($nombre,$this->link));
 
 			//$models->insertaEncuestaValida(md5($para),$departamento,$idencuesta,0);
-			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$this->id_organizacion',tipo_organizacion='$this->tipo_organizacion',encuesta='$this->idencuesta',completado='0'");
+			$this->db->query("INSERT INTO tbl_encuesta_valida SET cadena='$eval',departamento='$departamento',tipo_organizacion='$this->tipo_organizacion',encuesta='$this->idencuesta',completado='0'");
 			if($this->db->affected_rows>0){
 				$mail->send();
 			} else {

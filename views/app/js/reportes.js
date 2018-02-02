@@ -55,7 +55,7 @@ $(document).ready(function(){
 			        	$('#viewReport').empty();
 
 			        	$('#viewReport').append("reporte de "+ $("#tipo").val());
-			        	$('#viewReport').html(datos[1][$promedio].primer_resultado+datos[1][$promedio].segundo_resultado+ datos[2]['pregunta'] +datos[1][$promedio].cuarto_resultado);
+			        	$('#viewReport').html(datos[1][0].primer_resultado+datos[1][0].segundo_resultado+ datos[2]['pregunta'] +datos[1][0].cuarto_resultado);
 			        	
 		        	}
 			    }

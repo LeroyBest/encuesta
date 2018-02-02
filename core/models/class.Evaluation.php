@@ -15,7 +15,8 @@ class Evaluation {
 		$sql = $this->db->query("SELECT * FROM tbl_resultado_evaluacion WHERE id_resultado = $resultadoEval");
 		if($this->db->rows($sql) > 0) {
 			while($data = $this->db->recorrer($sql)) {
-				$resp[$data['id_resultado']] = $data;
+				//$resp[$data['id_resultado']] = $data;
+				$resp[] = array("id_resultado" => $data["id_resultado"], "primer_resultado" => $data["primer_resultado"], "segundo_resultado" => $data["segundo_resultado"], "cuarto_resultado" => $data["cuarto_resultado"]);
 			}
 		} else {
 			$resp = false;
